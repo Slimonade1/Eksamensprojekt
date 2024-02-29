@@ -1,8 +1,20 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Player/Idle/Idle_0001.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Player/Idle/Idle_0002.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Player/WalkingCycle/Walking_cycle_0002.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Player/WalkingCycle/Walking_cycle_0007.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Player/WalkingCycle/Walking_cycle_0012.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Player/WalkingCycle/Walking_cycle_0003.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Player/WalkingCycle/Walking_cycle_0006.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Player/WalkingCycle/Walking_cycle_0009.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Player/WalkingCycle/Walking_cycle_0004.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Player/WalkingCycle/Walking_cycle_0011.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Player/WalkingCycle/Walking_cycle_0013.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Player/WalkingCycle/Walking_cycle_0008.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Player/WalkingCycle/Walking_cycle_0010.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Player/WalkingCycle/Walking_cycle_0005.png" type="Texture" id=15]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -15,6 +27,14 @@ animations = [ {
 [sub_resource type="CapsuleShape2D" id=1]
 height = 0.0
 
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 15 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 13 ), ExtResource( 9 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 6 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "default",
+"speed": 24.0
+} ]
+
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 0, -10 )
 script = ExtResource( 1 )
@@ -26,3 +46,9 @@ frame = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1, 10 )
 shape = SubResource( 1 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( 26, 0 )
+frames = SubResource( 3 )
+frame = 6
+playing = true
