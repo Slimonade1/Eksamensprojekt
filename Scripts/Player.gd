@@ -12,9 +12,11 @@ var vel = Vector2()
 var grounded = false
 
 onready var sprite = $AnimatedSprite
+onready var spriteFriend = $AnimatedSprite/AnimatedSprite
 
 func _ready():
 	sprite.playing = true
+	spriteFriend.playing = true
 
 func _physics_process(delta):
 	#reset horizontal velocity

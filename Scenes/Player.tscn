@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Player/Idle/Idle_0001.png" type="Texture" id=2]
@@ -15,10 +15,20 @@
 [ext_resource path="res://Sprites/Player/WalkingCycle/Walking_cycle_0008.png" type="Texture" id=13]
 [ext_resource path="res://Sprites/Player/WalkingCycle/Walking_cycle_0010.png" type="Texture" id=14]
 [ext_resource path="res://Sprites/Player/WalkingCycle/Walking_cycle_0005.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Companions/BackpackGut1_0002.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Companions/BackpackGut1_0001.png" type="Texture" id=17]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 16 ), ExtResource( 17 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -43,6 +53,10 @@ script = ExtResource( 1 )
 frames = SubResource( 2 )
 frame = 1
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="AnimatedSprite"]
+position = Vector2( -5, 5 )
+frames = SubResource( 4 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1, 10 )
 shape = SubResource( 1 )
@@ -50,5 +64,5 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
 position = Vector2( 26, 0 )
 frames = SubResource( 3 )
-frame = 6
+frame = 10
 playing = true
