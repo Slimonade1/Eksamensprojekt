@@ -64,11 +64,11 @@ animations = [ {
 position = Vector2( 0, -10 )
 script = ExtResource( 1 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="playerSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 frame = 1
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="AnimatedSprite"]
+[node name="spriteFriend" type="AnimatedSprite" parent="playerSprite"]
 position = Vector2( -5, 5 )
 frames = SubResource( 4 )
 
@@ -79,11 +79,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
 position = Vector2( 26, 0 )
 frames = SubResource( 3 )
-frame = 9
-playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
 position = Vector2( -29, 4 )
 frames = SubResource( 5 )
-frame = 6
-playing = true

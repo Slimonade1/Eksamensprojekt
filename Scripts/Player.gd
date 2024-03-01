@@ -11,8 +11,8 @@ var gravity = 800
 var vel = Vector2()
 var grounded = false
 
-onready var sprite = $AnimatedSprite
-onready var spriteFriend = $AnimatedSprite/AnimatedSprite
+onready var sprite = $playerSprite
+onready var spriteFriend = $playerSprite/spriteFriend
 
 func _ready():
 	sprite.playing = true
