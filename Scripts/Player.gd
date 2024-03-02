@@ -4,9 +4,9 @@ extends KinematicBody2D
 var score = 0
 
 # physics
-var speed = 200
-var jumpForce = 600
-var gravity = 800
+var speed = 60
+var jumpForce = 800
+var gravity = 2000
 
 var vel = Vector2()
 var grounded = false
@@ -19,8 +19,10 @@ func _ready():
 	spriteFriend.playing = true
 
 func _physics_process(delta):
-	#reset horizontal velocity
-	vel.x = 0
+	#slow stop
+	vel.x *= 0.85
+	if vel.x <= speed*5 / 6 and vel.x >= -speed*5 / 6:
+		vel.x = 0
 	
 	if Input.is_action_pressed("ui_left"):
 		vel.x -= speed
@@ -35,8 +37,12 @@ func _physics_process(delta):
 	
 	#sprite direction
 	if vel.x < 0:
-		sprite.flip_h = true
-	elif vel.x > 0:
-		sprite.flip_h = false
+		sprite.scale.x = -1
+		sprite.animation = "running"
+	if vel.x > 0:
+		sprite.scale.x = 1
+		sprite.animation = "running"
+	if vel.x == 0:
+		sprite.animation = "idle"
 	
 	vel = move_and_slide(vel, Vector2.UP)
