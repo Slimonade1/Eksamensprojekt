@@ -39,10 +39,13 @@ func _physics_process(delta):
 	if vel.x < 0:
 		sprite.scale.x = -1
 		sprite.animation = "running"
+		spriteFriend.animation = "Running"
 	if vel.x > 0:
 		sprite.scale.x = 1
 		sprite.animation = "running"
+		spriteFriend.animation = "Running"
 	if vel.x == 0:
 		sprite.animation = "idle"
+		spriteFriend.animation = "Idle"
 	
 	vel = move_and_slide(vel, Vector2.UP)
