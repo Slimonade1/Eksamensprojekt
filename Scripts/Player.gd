@@ -16,6 +16,8 @@ onready var spriteFriend = $playerSprite/spriteFriend
 
 func _ready():
 	sprite.playing = true
+	
+	spriteFriend.visible = false
 	spriteFriend.playing = true
 
 func _physics_process(delta):
@@ -49,3 +51,6 @@ func _physics_process(delta):
 		spriteFriend.animation = "idle"
 	
 	vel = move_and_slide(vel, Vector2.UP)
+	
+func showCompanion():
+	spriteFriend.visible = true
