@@ -14,6 +14,8 @@ var grounded = false
 onready var sprite = $playerSprite
 onready var spriteFriend = $playerSprite/spriteFriend
 
+var Bullet = preload("res://Scenes/Bullet.tscn")
+
 func _ready():
 	sprite.playing = true
 	
@@ -21,6 +23,14 @@ func _ready():
 	spriteFriend.playing = true
 
 func _physics_process(delta):
+	handleMovement(delta)
+	
+	if Input.is_action_pressed("ui_shoot"):
+		handleShooting()
+
+	
+
+func handleMovement(delta):
 	#slow stop
 	vel.x *= 0.85
 	if vel.x <= speed*5 / 6 and vel.x >= -speed*5 / 6:
@@ -51,6 +61,14 @@ func _physics_process(delta):
 		spriteFriend.animation = "idle"
 	
 	vel = move_and_slide(vel, Vector2.UP)
-	
+
 func showCompanion():
 	spriteFriend.visible = true
+
+func handleShooting():
+	var gameScene = get_parent()
+	var newBullet = Bullet.instance()
+	print(gameScene)
+	newBullet.position = position
+	gameScene.add_child(newBullet)
+
