@@ -43,7 +43,10 @@ func handleMovement(delta):
 		vel.x += speed
 	
 	#apply gravity to player
-	vel.y += gravity * delta
+	if is_on_wall():
+		vel.y = 0
+	else:
+		vel.y += gravity * delta
 	
 	if Input.is_action_pressed("ui_up") and is_on_floor():
 		vel.y -= jumpForce
