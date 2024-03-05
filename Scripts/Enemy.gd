@@ -1,10 +1,11 @@
 extends KinematicBody2D
 
-var speed = 60
+export var speed = 200
 var jumpForce = 800
 var gravity = 2000
 
 var vel = Vector2()
+var turn = false
 
 onready var sprite = $EnemySprite
 
@@ -16,7 +17,7 @@ func _physics_process(delta):
 	vel.x = 0
 	
 	#movement left and right
-	vel.x -= speed
+	vel.x += speed
 	
 	#apply gravity to player
 	vel.y += gravity * delta
@@ -28,3 +29,10 @@ func _physics_process(delta):
 		sprite.flip_h = true
 	if vel.x > 0:
 		sprite.flip_h = false
+
+
+func turnAround():
+	turn = true
+	if turn:
+		speed *= -1
+		turn = false
