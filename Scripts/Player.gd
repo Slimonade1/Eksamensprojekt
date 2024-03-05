@@ -1,8 +1,9 @@
 extends KinematicBody2D
 
-#stats
+# stats
 var score = 0
-var playerDirection = "right"
+var damage = 1
+var attackSpeed = 2.0
 
 # physics
 var speed = 60
@@ -12,8 +13,14 @@ var gravity = 2000
 var vel = Vector2()
 var grounded = false
 
+# graphics
+var playerDirection = "right"
 onready var sprite = $playerSprite
 onready var spriteFriend = $playerSprite/spriteFriend
+
+# gun cooldown
+var cooldown = false
+onready var bulletCooldown = $BulletCooldown
 
 var Bullet = preload("res://Scenes/Bullet.tscn")
 
@@ -26,7 +33,7 @@ func _ready():
 func _physics_process(delta):
 	handleMovement(delta)
 	
-	if Input.is_action_pressed("ui_shoot"):
+	if Input.is_action_pressed("ui_shoot") and !cooldown:
 		handleShooting()
 
 	
@@ -72,9 +79,16 @@ func showCompanion():
 	spriteFriend.visible = true
 
 func handleShooting():
+	bulletCooldown.wait_time = 1 / attackSpeed
+	bulletCooldown.start()
+	cooldown = true
+	
 	var gameScene = get_parent()
 	var newBullet = Bullet.instance()
 	newBullet.direction = playerDirection
 	newBullet.position = position
 	gameScene.add_child(newBullet)
 
+
+func _on_BulletCooldown_timeout():
+	cooldown = false

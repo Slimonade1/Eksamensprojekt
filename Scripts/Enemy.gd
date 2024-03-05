@@ -1,13 +1,16 @@
 extends KinematicBody2D
 
+#stats
 export var speed = 200
 var jumpForce = 800
 var gravity = 2000
+var health = 3
 
 var vel = Vector2()
 var turn = false
 
 onready var sprite = $EnemySprite
+onready var player = $"../../Player"
 
 func _ready():
 	sprite.playing = true
@@ -36,3 +39,8 @@ func turnAround():
 	if turn:
 		speed *= -1
 		turn = false
+
+func takeDamage():
+	if health == 0:
+		queue_free()
+	health -= player.damage

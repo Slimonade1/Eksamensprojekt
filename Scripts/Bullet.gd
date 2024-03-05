@@ -16,4 +16,5 @@ func _physics_process(delta):
 
 
 func _on_Bullet_body_entered(body):
-	print("HIT")
+	body.takeDamage()
+	queue_free()
