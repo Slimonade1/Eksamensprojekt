@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 #stats
 var score = 0
+var playerDirection = "right"
 
 # physics
 var speed = 60
@@ -52,10 +53,12 @@ func handleMovement(delta):
 		sprite.scale.x = -1
 		sprite.animation = "running"
 		spriteFriend.animation = "running"
+		playerDirection = "left"
 	if vel.x > 0:
 		sprite.scale.x = 1
 		sprite.animation = "running"
 		spriteFriend.animation = "running"
+		playerDirection = "right"
 	if vel.x == 0:
 		sprite.animation = "idle"
 		spriteFriend.animation = "idle"
@@ -68,7 +71,7 @@ func showCompanion():
 func handleShooting():
 	var gameScene = get_parent()
 	var newBullet = Bullet.instance()
-	print(gameScene)
+	newBullet.direction = playerDirection
 	newBullet.position = position
 	gameScene.add_child(newBullet)
 

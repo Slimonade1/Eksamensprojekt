@@ -1,10 +1,15 @@
 extends Area2D
 
 var velocity = 5
+var direction
 
 func _ready():
 	pass
 
 func _physics_process(delta):
-	position.x += velocity
+	if direction == "left":
+		position.x -= velocity
+	
+	if direction == "right":
+		position.x += velocity
 
