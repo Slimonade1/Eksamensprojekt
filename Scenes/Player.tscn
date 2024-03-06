@@ -59,7 +59,7 @@ frames = SubResource( 2 )
 animation = "idle"
 
 [node name="spriteFriend" type="AnimatedSprite" parent="playerSprite"]
-position = Vector2( -5, 3 )
+position = Vector2( -5, 4 )
 frames = SubResource( 4 )
 animation = "running"
 

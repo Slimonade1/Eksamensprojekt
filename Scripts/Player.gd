@@ -36,8 +36,6 @@ func _physics_process(delta):
 	if Input.is_action_pressed("ui_shoot") and !cooldown:
 		handleShooting()
 
-	
-
 func handleMovement(delta):
 	#slow stop
 	vel.x *= 0.85
@@ -55,7 +53,7 @@ func handleMovement(delta):
 	else:
 		vel.y += gravity * delta
 	
-	if Input.is_action_pressed("ui_up") and is_on_floor():
+	if Input.is_action_pressed("ui_up") and is_on_floor() or Input.is_action_pressed("ui_up") and is_on_wall():
 		vel.y -= jumpForce
 	
 	#sprite direction
