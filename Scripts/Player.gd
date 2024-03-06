@@ -4,10 +4,12 @@ extends KinematicBody2D
 var score = 0
 var damage = 1
 var attackSpeed = 2.0
+var health = 5
 
 # physics
 var speed = 60
 var jumpForce = 800
+var climbSpeed = 200
 var gravity = 2000
 
 var vel = Vector2()
@@ -53,7 +55,12 @@ func handleMovement(delta):
 	else:
 		vel.y += gravity * delta
 	
-	if Input.is_action_pressed("ui_up") and is_on_floor() or Input.is_action_pressed("ui_up") and is_on_wall():
+	# wall climb
+	if is_on_wall() and Input.is_action_pressed("ui_up"):
+		vel.y -= climbSpeed
+	
+	# jump
+	if Input.is_action_pressed("ui_up") and is_on_floor():
 		vel.y -= jumpForce
 	
 	#sprite direction
@@ -87,6 +94,10 @@ func handleShooting():
 	newBullet.position = position
 	gameScene.add_child(newBullet)
 
-
 func _on_BulletCooldown_timeout():
 	cooldown = false
+
+func takeDamage():
+	health -= 1
+	if health == 0:
+		queue_free()

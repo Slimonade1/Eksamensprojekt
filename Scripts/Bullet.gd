@@ -13,8 +13,6 @@ func _physics_process(delta):
 	if direction == "right":
 		position.x += velocity
 
-
-
 func _on_Bullet_body_entered(body):
 	body.takeDamage()
 	queue_free()

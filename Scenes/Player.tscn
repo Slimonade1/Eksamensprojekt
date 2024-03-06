@@ -45,8 +45,8 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 9.33333
-height = 6.66667
+radius = 11.0
+height = 0.0
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 3, -23 )
@@ -64,7 +64,7 @@ frames = SubResource( 4 )
 animation = "running"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1, 7.66667 )
+position = Vector2( -2.33333, 8.33333 )
 shape = SubResource( 1 )
 
 [node name="BulletCooldown" type="Timer" parent="."]

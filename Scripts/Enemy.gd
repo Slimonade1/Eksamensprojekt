@@ -6,16 +6,21 @@ var jumpForce = 800
 var gravity = 2000
 var health = 3
 
+
 var vel = Vector2()
 var turn = false
 
 onready var sprite = $EnemySprite
 onready var player = $"../../Player"
+onready var edgeDetection = $EdgeDetection
 
 func _ready():
 	sprite.playing = true
 
 func _physics_process(delta):
+	if !edgeDetection.is_colliding() or is_on_wall():
+		turnAround()
+	
 	#reset x velocity
 	vel.x = 0
 	
@@ -33,7 +38,6 @@ func _physics_process(delta):
 	if vel.x > 0:
 		sprite.flip_h = false
 
-
 func turnAround():
 	turn = true
 	if turn:
@@ -41,6 +45,6 @@ func turnAround():
 		turn = false
 
 func takeDamage():
+	health -= player.damage
 	if health == 0:
 		queue_free()
-	health -= player.damage
