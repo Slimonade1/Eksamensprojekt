@@ -12,7 +12,7 @@ script = ExtResource( 1 )
 [node name="Baggrund" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.145098, 0.141176, 0.141176, 0.568627 )
+color = Color( 0.145098, 0.141176, 0.141176, 0.713726 )
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_right = 1.0
