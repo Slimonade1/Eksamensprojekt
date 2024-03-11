@@ -24,6 +24,8 @@ onready var spriteFriend = $playerSprite/spriteFriend
 var cooldown = false
 onready var bulletCooldown = $BulletCooldown
 
+# gun physics
+onready var tilemap = $"../Background/TileMap"
 var Bullet = preload("res://Scenes/Bullet.tscn")
 
 func _ready():
@@ -96,6 +98,9 @@ func handleShooting():
 
 func _on_BulletCooldown_timeout():
 	cooldown = false
+
+func destroyWall():
+	print("YES")
 
 func takeDamage():
 	health -= 1
