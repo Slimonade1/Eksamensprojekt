@@ -99,9 +99,6 @@ func handleShooting():
 func _on_BulletCooldown_timeout():
 	cooldown = false
 
-func destroyWall():
-	print("YES")
-
 func takeDamage():
 	health -= 1
 	if health == 0:
