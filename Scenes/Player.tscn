@@ -44,9 +44,8 @@ animations = [ {
 "speed": 24.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 11.0
-height = 0.0
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 6.5, 11.5 )
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 3, -23 )
@@ -64,8 +63,8 @@ frames = SubResource( 4 )
 animation = "running"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -2.33333, 8.33333 )
-shape = SubResource( 1 )
+position = Vector2( -3.5, 8.5 )
+shape = SubResource( 5 )
 
 [node name="BulletCooldown" type="Timer" parent="."]
 one_shot = true
