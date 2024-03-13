@@ -7,9 +7,6 @@ onready var tilemap = get_parent().get_node("Background/TileMap")
 onready var positionInWalls1 = $PositionInWalls1
 onready var positionInWalls2 = $PositionInWalls2
 
-func _ready():
-	pass
-
 func _physics_process(delta):
 	if direction == "left":
 		position.x -= velocity
@@ -30,7 +27,6 @@ func _on_Bullet_body_entered(body):
 func destroyWall():
 	var pos1 : Vector2 = tilemap.world_to_map(positionInWalls1.global_position)
 	var pos2 : Vector2 = tilemap.world_to_map(positionInWalls2.global_position)
-	print(pos1, pos2)
 	tilemap.set_cellv(pos1, -1)
 	tilemap.set_cellv(pos2, -1)
 	
