@@ -61,4 +61,5 @@ margin_bottom = 124.0
 text = "Quit"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Resume" to="." method="_on_Resume_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Last Checkpoint" to="." method="_on_Last_Checkpoint_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]

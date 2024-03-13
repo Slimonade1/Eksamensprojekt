@@ -18,3 +18,7 @@ func _on_Resume_pressed():
 
 func _on_Quit_pressed():
 	get_tree().quit()
+
+
+func _on_Last_Checkpoint_pressed():
+	get_tree().change_scene("res://Scenes/gameScene.tscn")
