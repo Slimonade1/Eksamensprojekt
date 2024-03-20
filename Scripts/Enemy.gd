@@ -6,13 +6,19 @@ var jumpForce = 800
 var gravity = 2000
 var health = 3
 
-
 var vel = Vector2()
 var turn = false
 
+var enemyDirection = "right"
 onready var sprite = $EnemySprite
 onready var player = $"../../Player"
 onready var edgeDetection = $EdgeDetection
+onready var playerDetection = $PlayerDetection
+
+var cooldown = false
+onready var bulletCooldown = $BulletCooldown
+var attackSpeed = 2.0
+var Bullet = preload("res://Scenes/Bullet.tscn")
 
 func _ready():
 	sprite.playing = true
@@ -20,6 +26,9 @@ func _ready():
 func _physics_process(delta):
 	if !edgeDetection.is_colliding() or is_on_wall():
 		turnAround()
+	
+	if(playerDetection.is_colliding() and !cooldown):
+		handleShooting()
 	
 	#reset x velocity
 	vel.x = 0
@@ -35,8 +44,13 @@ func _physics_process(delta):
 	#sprite direction
 	if vel.x < 0:
 		sprite.flip_h = true
+		enemyDirection = "left"
+		playerDetection.scale.x = -1
+		
 	if vel.x > 0:
 		sprite.flip_h = false
+		enemyDirection = "right"
+		playerDetection.scale.x = 1
 
 func turnAround():
 	turn = true
@@ -48,3 +62,18 @@ func takeDamage():
 	health -= player.damage
 	if health == 0:
 		queue_free()
+
+func handleShooting():
+	bulletCooldown.wait_time = 1 / attackSpeed
+	bulletCooldown.start()
+	cooldown = true
+	
+	var gameScene = get_parent()
+	var newBullet = Bullet.instance()
+	newBullet.collision_mask = 1
+	newBullet.direction = enemyDirection
+	newBullet.position = position
+	gameScene.add_child(newBullet)
+
+func _on_BulletCooldown_timeout():
+	cooldown = false

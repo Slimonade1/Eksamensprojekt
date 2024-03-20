@@ -1,6 +1,6 @@
 extends Area2D
 
-var velocity = 5
+var velocity = 10
 var direction
 
 onready var tilemap = get_parent().get_node("Background/TileMap")
@@ -17,13 +17,13 @@ func _physics_process(delta):
 		scale.x = 1
 
 func _on_Bullet_body_entered(body):
-	if body.is_in_group("Enemies"):
+	if body.is_in_group("Enemies") or body.is_in_group("Players"):
 		body.takeDamage()
 	else:
 		destroyWall()
 	
 	queue_free()
-	
+
 func destroyWall():
 	var pos1 : Vector2 = tilemap.world_to_map(positionInWalls1.global_position)
 	var pos2 : Vector2 = tilemap.world_to_map(positionInWalls2.global_position)

@@ -888,7 +888,7 @@ script = ExtResource( 5 )
 [node name="CharacterDescription" parent="." instance=ExtResource( 7 )]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -27, -262 )
+position = Vector2( 565, -456 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( 0, 10 )

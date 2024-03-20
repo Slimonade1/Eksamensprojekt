@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/1Dmg run_0008.png-59a68a4c5bcdec28cc22edce5ae0db62.stex"
+path="res://.import/1Dmg run_0008.png-ee347e41b97119f7915a8692224b1419.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player/walkingDamage-1/1Dmg run_0008.png"
-dest_files=[ "res://.import/1Dmg run_0008.png-59a68a4c5bcdec28cc22edce5ae0db62.stex" ]
+source_file="res://Sprites/Player/WalkingDamage-1/1Dmg run_0008.png"
+dest_files=[ "res://.import/1Dmg run_0008.png-ee347e41b97119f7915a8692224b1419.stex" ]
 
 [params]
 
