@@ -19,6 +19,7 @@ var grounded = false
 var playerDirection = "right"
 onready var sprite = $playerSprite
 onready var spriteFriend = $playerSprite/spriteFriend
+onready var jumpEffect = $"../Jump effect"
 
 # gun cooldown
 var cooldown = false
@@ -64,6 +65,11 @@ func handleMovement(delta):
 	# jump
 	if Input.is_action_pressed("ui_up") and is_on_floor():
 		vel.y -= jumpForce
+		jumpEffect.position.x = position.x - 8
+		jumpEffect.position.y = position.y+ 30
+		jumpEffect.playing = true
+		jumpEffect.visible = true
+		
 	
 	#sprite direction
 	if vel.x < 0:
@@ -96,10 +102,14 @@ func handleShooting():
 	newBullet.position = position
 	gameScene.add_child(newBullet)
 
-func _on_BulletCooldown_timeout():
-	cooldown = false
 
 func takeDamage():
 	health -= 1
 	if health == 0:
 		queue_free()
+
+
+func _on_Jump_effect_animation_finished():
+	jumpEffect.playing = false
+	jumpEffect.visible = false
+	pass # Replace with function body.

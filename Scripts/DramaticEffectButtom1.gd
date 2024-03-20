@@ -19,7 +19,7 @@ func _process(delta):
 
 
 func posCheck(posX):
-	if posX > OS.get_screen_size().x+472:
-		position.y = 639.956
-		position.x = -472
+	if posX > OS.get_screen_size().x:
+		position.y -= texture.get_size().y*2*(sin(3.1) /10)
+		position.x -=  texture.get_size().x*2
 		
