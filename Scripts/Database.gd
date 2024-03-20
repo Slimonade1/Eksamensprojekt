@@ -1,11 +1,10 @@
 extends Control
 
-
 # Declare member variables here. Examples:
 var http_request : HTTPRequest = HTTPRequest.new()
 const SERVER_URL = "http://civilgames.dk/db_eksamens_projekt.php"
 const SERVER_HEADERS = ["Content-Type: application/x-www-form-urlencoded", "Cache-Control: max-age=0"]
-const SECRET_KEY = 1234567890
+const SECRET_KEY = "myPasswordNoStealPlsDDU!"
 var nonce = null
 var request_queue : Array = []
 var is_requesting : bool = false
@@ -89,14 +88,16 @@ func _http_request_completed(_result, _response_code, _headers, _body):
 	if response['command'] == "get_nonce":
 		nonce = response['response']['nonce']
 		print("Get nonce: " + response['response']['nonce'])
-		return	
-
-	#$TextEdit.set_text(response_body)
+		return
 
 	if response['response']['size'] > 0:
 		$TextEdit.set_text("")
 		for n in (response['response']['size']):
-			$TextEdit.set_text($TextEdit.get_text() + String(response['response'][String(n)]['player_name']) + "\t\t" + String(response['response'][String(n)]['time']) + "\n")
+			var time = int(response['response'][String(n)]['time'])
+			var secs = fmod(time,60)
+			var mins = fmod(time,60*60) / 60
+			var timeText = "%02d : %02d" % [mins,secs]
+			$TextEdit.set_text($TextEdit.get_text() + String(response['response'][String(n)]['player_name']) + "\t\t" + String(timeText) + "\n")
 	else:	
 		$TextEdit.set_text("No data")
 	
@@ -111,13 +112,6 @@ func _submit_time():
 func _get_times():
 	var command = "get_times"
 	var data = {"time_ofset" : 0, "time_number" : 10}
-	request_queue.push_back({"command" : command, "data" : data})
-	print("get times")
-
-func _get_player():
-	var user_id = $ID.get_text()
-	var command = "get_player"
-	var data = {"user_id" : user_id}
 	request_queue.push_back({"command" : command, "data" : data})
 
 

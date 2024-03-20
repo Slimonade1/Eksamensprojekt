@@ -74,19 +74,36 @@ func handleMovement(delta):
 	#sprite direction
 	if vel.x < 0:
 		sprite.scale.x = -1
-		sprite.animation = "running"
+		handleAnimation("running")
 		spriteFriend.animation = "running"
 		playerDirection = "left"
 	if vel.x > 0:
 		sprite.scale.x = 1
-		sprite.animation = "running"
+		handleAnimation("running")
 		spriteFriend.animation = "running"
 		playerDirection = "right"
 	if vel.x == 0:
-		sprite.animation = "idle"
+		handleAnimation("idle")
 		spriteFriend.animation = "idle"
 	
 	vel = move_and_slide(vel, Vector2.UP)
+
+func handleAnimation(action):
+	if(action == "idle"):
+		if(health > 3):
+			sprite.animation = "idle"
+		elif(health > 1):
+			sprite.animation = "idleDMG1"
+		else:
+			sprite.animation = "idleDMG2"
+		
+	if(action == "running"):
+		if(health > 3):
+			sprite.animation = "running"
+		elif(health > 1):
+			sprite.animation = "runningDMG1"
+		else:
+			sprite.animation = "runningDMG2"
 
 func showCompanion():
 	spriteFriend.visible = true
