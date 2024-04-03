@@ -919,20 +919,22 @@ smoothing_enabled = true
 smoothing_speed = 10.0
 script = ExtResource( 8 )
 
+[node name="Companions" type="Node" parent="."]
+
+[node name="Companion" parent="Companions" instance=ExtResource( 3 )]
+position = Vector2( 1139, -456 )
+
 [node name="Background" type="Node" parent="."]
 
 [node name="TileMap" type="TileMap" parent="Background"]
+scale = Vector2( 6, 6 )
 tile_set = SubResource( 2 )
+cell_size = Vector2( 4, 4 )
 cell_quadrant_size = 64
 collision_layer = 16
 collision_mask = 5
 format = 1
-tile_data = PoolIntArray( -655360, 0, 0, -655359, 0, 0, -655358, 0, 0, -655357, 0, 0, -589821, 0, 0, -589820, 0, 0, -589819, 0, 0, -589818, 0, 0, -393208, 0, 0, -393207, 0, 0, -393206, 0, 0, -393205, 0, 0, -393204, 0, 0, -327670, 0, 0, -327669, 0, 0, -327668, 0, 0, -327667, 0, 0, -262134, 0, 0, -262133, 0, 0, -262132, 0, 0, -262131, 0, 0, -262130, 0, 0, -131075, 0, 0, -131074, 0, 0, -131073, 0, 0, -196608, 0, 0, -196607, 0, 0, -196606, 0, 0, -196598, 0, 0, -196597, 0, 0, -196596, 0, 0, -196595, 0, 0, -196594, 0, 0, -196593, 0, 0, -131070, 0, 0, -131062, 0, 0, -131061, 0, 0, -131060, 0, 0, -131059, 0, 0, -131058, 0, 0, -131057, 0, 0, -131056, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 0, -65521, 0, 0, -65520, 0, 0, -65519, 0, 0, -65518, 0, 0 )
-
-[node name="Companions" type="Node" parent="."]
-
-[node name="Companion" parent="Companions" instance=ExtResource( 3 )]
-position = Vector2( 321, -88 )
+tile_data = PoolIntArray( -1376215, 12, 0, -1245147, 10, 0, -1245144, 2, 0, -1245140, 2, 0, -1245138, 2, 0, -1245136, 6, 0, -1245134, 26, 0, -1179606, 1, 0, -1114098, 10, 0, -1114095, 2, 0, -1114093, 2, 0, -1114091, 2, 0, -1114089, 2, 0, -1114087, 2, 0, -1114085, 2, 0, -1114083, 4, 0, -1048538, 9, 0, -1048536, 1, 0, -1048534, 1, 0, -1048532, 1, 0, -1048530, 25, 0, -917489, 9, 0, -917487, 1, 0, -917485, 1, 0, -917483, 1, 0, -917481, 1, 0, -917479, 1, 0, -917477, 1, 0, -917475, 3, 0, -917466, 13, 0, -917464, 1, 0, -917462, 1, 0, -917460, 3, 0, -786417, 29, 0, -786415, 1, 0, -786413, 5, 0, -786411, 1, 0, -786409, 1, 0, -786407, 1, 0, -786405, 1, 0, -786403, 3, 0, -786392, 29, 0, -786390, 1, 0, -786388, 25, 0, -655343, 31, 0, -655339, 29, 0, -655337, 1, 0, -655335, 1, 0, -655333, 1, 0, -655331, 7, 0, -655318, 11, 0, -524265, 13, 0, -524263, 5, 0, -524261, 25, 0, -524246, 15, 0 )
 
 [node name="Enemies" type="Node" parent="."]
 
@@ -940,10 +942,11 @@ position = Vector2( 321, -88 )
 position = Vector2( 642, -429 )
 
 [node name="Jump effect" type="AnimatedSprite" parent="."]
-position = Vector2( -38, -215 )
+visible = false
+position = Vector2( -276, -118 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 37 )
-playing = true
+frame = 4
 script = ExtResource( 19 )
 
 [connection signal="animation_finished" from="Jump effect" to="Player" method="_on_Jump_effect_animation_finished"]
