@@ -6,7 +6,7 @@ onready var showing = false
 
 func _process(delta):
 	if showing:
-		self.is_paused = true
+		self.is_paused = ! is_paused
 		set_is_paused(self.is_paused)
 		print("OMG CharacterDescription Showings", is_paused )
 
