@@ -14,6 +14,10 @@ config/name="Eksamensprojekt"
 run/main_scene="res://Scenes/masterScene.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Singletons="*res://Singletons.gd"
+
 [display]
 
 window/stretch/mode="viewport"

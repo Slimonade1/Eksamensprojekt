@@ -628,7 +628,7 @@ tile_data = PoolIntArray( -1441752, 25, 0, -1048530, 25, 0, -851957, 22, 0, -851
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Enemy" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( -126, -415 )
+position = Vector2( 749, -623 )
 
 [node name="Jump effect" type="AnimatedSprite" parent="."]
 visible = false
