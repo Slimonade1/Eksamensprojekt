@@ -9,6 +9,7 @@ func _ready():
 
 func _on_Companion_body_entered(body):
 	if body.name == "Player":
+		print("OMG SHOWING")
 		body.showCompanion()
 		infoScreen.showing = true
 		
