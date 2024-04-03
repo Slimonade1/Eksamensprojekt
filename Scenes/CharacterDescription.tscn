@@ -89,6 +89,7 @@ texture = ExtResource( 3 )
 script = ExtResource( 4 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+pause_mode = 2
 margin_left = 579.0
 margin_top = 200.0
 margin_right = 887.0

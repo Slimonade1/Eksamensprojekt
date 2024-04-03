@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://Sprites/JumpEffect/Jump_effect_0001.png" type="Texture" id=17]
 [ext_resource path="res://Sprites/JumpEffect/Jump_effect_0004.png" type="Texture" id=18]
 [ext_resource path="res://Scripts/Jump effect.gd" type="Script" id=19]
+[ext_resource path="res://Scenes/Bullet.tscn" type="PackedScene" id=20]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -111,6 +112,12 @@ points = PoolVector2Array( 4, 4, 8, 0, 8, 8, 0, 8 )
 points = PoolVector2Array( 8, 12, 0, 12, 0, 4, 8, 4 )
 
 [sub_resource type="ConvexPolygonShape2D" id=32]
+points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
+
+[sub_resource type="ConvexPolygonShape2D" id=38]
+points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
+
+[sub_resource type="ConvexPolygonShape2D" id=39]
 points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 
 [sub_resource type="ConvexPolygonShape2D" id=33]
@@ -249,6 +256,18 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 32 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 38 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 39 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 5/z_index = 0
@@ -910,7 +929,7 @@ script = ExtResource( 5 )
 [node name="CharacterDescription" parent="CanvasLayer2" instance=ExtResource( 7 )]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 21, -266 )
+position = Vector2( 499, -461 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( 0, 10 )
@@ -934,12 +953,12 @@ cell_quadrant_size = 64
 collision_layer = 16
 collision_mask = 5
 format = 1
-tile_data = PoolIntArray( -1638365, 10, 0, -1638362, 2, 0, -1638360, 4, 0, -1441756, 9, 0, -1441754, 1, 0, -1441752, 25, 0, -1376215, 12, 0, -1310684, 9, 0, -1310682, 3, 0, -1245144, 2, 0, -1245140, 2, 0, -1245138, 2, 0, -1245136, 6, 0, -1245134, 26, 0, -1179612, 29, 0, -1179610, 1, 0, -1179606, 1, 0, -1114098, 10, 0, -1114095, 2, 0, -1114093, 2, 0, -1114091, 2, 0, -1114089, 2, 0, -1114087, 2, 0, -1114085, 2, 0, -1114083, 4, 0, -1048538, 9, 0, -1048536, 1, 0, -1048534, 1, 0, -1048532, 1, 0, -1048530, 25, 0, -917489, 9, 0, -917487, 1, 0, -917485, 1, 0, -917483, 1, 0, -917481, 1, 0, -917479, 1, 0, -917477, 1, 0, -917475, 3, 0, -917466, 13, 0, -917464, 1, 0, -917462, 1, 0, -917460, 3, 0, -786417, 29, 0, -786415, 1, 0, -786413, 5, 0, -786411, 1, 0, -786409, 1, 0, -786407, 1, 0, -786405, 1, 0, -786403, 3, 0, -786392, 29, 0, -786390, 1, 0, -786388, 25, 0, -655343, 15, 0, -655339, 29, 0, -655337, 1, 0, -655335, 1, 0, -655333, 1, 0, -655331, 7, 0, -655318, 11, 0, -524265, 13, 0, -524263, 5, 0, -524261, 25, 0, -524246, 15, 0 )
+tile_data = PoolIntArray( -1638371, 10, 0, -1638365, 10, 0, -1638362, 2, 0, -1638360, 4, 0, -1441756, 9, 0, -1441754, 1, 0, -1441752, 25, 0, -1376215, 12, 0, -1310684, 9, 0, -1310682, 3, 0, -1245144, 2, 0, -1245140, 2, 0, -1245138, 2, 0, -1245136, 6, 0, -1245134, 26, 0, -1179612, 29, 0, -1179610, 1, 0, -1179606, 1, 0, -1114098, 10, 0, -1114095, 2, 0, -1114093, 2, 0, -1114091, 2, 0, -1114089, 2, 0, -1114087, 2, 0, -1114085, 2, 0, -1114083, 4, 0, -1048538, 9, 0, -1048536, 1, 0, -1048534, 1, 0, -1048532, 1, 0, -1048530, 25, 0, -917489, 9, 0, -917487, 1, 0, -917485, 1, 0, -917483, 1, 0, -917481, 1, 0, -917479, 1, 0, -917477, 1, 0, -917475, 3, 0, -917466, 13, 0, -917464, 1, 0, -917462, 1, 0, -917460, 3, 0, -786417, 29, 0, -786415, 1, 0, -786413, 5, 0, -786411, 1, 0, -786409, 1, 0, -786407, 1, 0, -786405, 1, 0, -786403, 3, 0, -786392, 29, 0, -786390, 1, 0, -786388, 25, 0, -655343, 15, 0, -655339, 29, 0, -655337, 1, 0, -655335, 1, 0, -655333, 1, 0, -655331, 7, 0, -655318, 11, 0, -524265, 13, 0, -524263, 5, 0, -524261, 25, 0, -524246, 15, 0 )
 
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Enemy" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 642, -429 )
+position = Vector2( 127, -505 )
 
 [node name="Jump effect" type="AnimatedSprite" parent="."]
 visible = false
@@ -948,5 +967,8 @@ scale = Vector2( 3, 3 )
 frames = SubResource( 37 )
 frame = 4
 script = ExtResource( 19 )
+
+[node name="Bullet" parent="." instance=ExtResource( 20 )]
+position = Vector2( 647, -567 )
 
 [connection signal="animation_finished" from="Jump effect" to="Player" method="_on_Jump_effect_animation_finished"]

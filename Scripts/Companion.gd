@@ -11,4 +11,7 @@ func _on_Companion_body_entered(body):
 	if body.name == "Player":
 		body.showCompanion()
 		infoScreen.showing = true
+		
+		var timer = Timer.new()
+		
 		queue_free()
