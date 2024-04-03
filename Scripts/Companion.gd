@@ -1,7 +1,7 @@
 extends Area2D
 
 onready var sprite = $companionSprite
-onready var infoScreen = $"../../CanvasLayer/CharacterDescription"
+onready var infoScreen = $"../../CanvasLayer2/CharacterDescription"
 
 
 func _ready():
