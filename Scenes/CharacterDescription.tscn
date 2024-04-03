@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Sprites/Companions/KiraProfil/Kira Marie Peter-Hansen profil.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/CharacterDescription.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/Companions/Cinematic/DramaticEffect.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/DramaticEffectButtom1.gd" type="Script" id=4]
 [ext_resource path="res://Sprites/Companions/Cinematic/EUStjerner.png" type="Texture" id=5]
+[ext_resource path="res://Fonts/PoliticianFont.tres" type="DynamicFont" id=6]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 particles_animation = true
@@ -86,3 +87,13 @@ rotation = -3.1957
 scale = Vector2( 7, 7 )
 texture = ExtResource( 3 )
 script = ExtResource( 4 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+margin_left = 579.0
+margin_top = 200.0
+margin_right = 887.0
+margin_bottom = 269.0
+custom_fonts/normal_font = ExtResource( 6 )
+text = "Maria Kira Peter
+
+TestTestTest"
