@@ -908,9 +908,13 @@ script = ExtResource( 5 )
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="CharacterDescription" parent="CanvasLayer2" instance=ExtResource( 7 )]
+margin_left = 387.0
+margin_top = -708.0
+margin_right = 387.0
+margin_bottom = -708.0
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 21, -266 )
+position = Vector2( 415, -444 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( 0, 10 )
