@@ -119,6 +119,8 @@ func handleShooting():
 	newBullet.position = position
 	gameScene.add_child(newBullet)
 
+func _on_BulletCooldown_timeout():
+	cooldown = false
 
 func takeDamage():
 	health -= 1

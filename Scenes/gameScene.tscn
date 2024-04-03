@@ -908,7 +908,7 @@ script = ExtResource( 5 )
 [node name="CharacterDescription" parent="CanvasLayer" instance=ExtResource( 7 )]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 565, -456 )
+position = Vector2( 21, -266 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( 0, 10 )
@@ -941,7 +941,7 @@ position = Vector2( 642, -429 )
 position = Vector2( -38, -215 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 37 )
-frame = 7
+frame = 9
 playing = true
 script = ExtResource( 19 )
 
