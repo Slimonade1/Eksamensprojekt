@@ -5,6 +5,7 @@ var score = 0
 var damage = 1
 var attackSpeed = 2.0
 var health = 5
+var trauma = 0.0
 
 # physics
 var speed = 60
@@ -38,10 +39,19 @@ func _ready():
 	
 
 func _physics_process(delta):
+	
 	handleMovement(delta)
 	
 	if Input.is_action_pressed("ui_shoot") and !cooldown:
 		handleShooting()
+	
+	if !is_on_floor() && !is_on_wall():
+		if trauma < 0.2:
+			trauma += 0.03
+		$Camera2D.trauma = trauma
+	else: 
+		trauma = -1.3
+		$Camera2D.trauma = 0.0
 
 func handleMovement(delta):
 	#slow stop
