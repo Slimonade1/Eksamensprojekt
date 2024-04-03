@@ -20,7 +20,7 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 6, 7.5 )
 
-[node name="Companion" type="Area2D"]
+[node name="Companion" type="Area2D" groups=["Companions"]]
 scale = Vector2( -3, 3 )
 script = ExtResource( 8 )
 

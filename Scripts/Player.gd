@@ -29,11 +29,13 @@ onready var bulletCooldown = $BulletCooldown
 onready var tilemap = $"../Background/TileMap"
 var Bullet = preload("res://Scenes/Bullet.tscn")
 
+
 func _ready():
 	sprite.playing = true
 	
 	spriteFriend.visible = false
 	spriteFriend.playing = true
+	
 
 func _physics_process(delta):
 	handleMovement(delta)
