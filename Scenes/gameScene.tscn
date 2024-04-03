@@ -599,7 +599,7 @@ margin_right = 387.0
 margin_bottom = -708.0
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 499, -461 )
+position = Vector2( 1339, -503 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( 0, 10 )
@@ -611,7 +611,7 @@ script = ExtResource( 8 )
 [node name="Companions" type="Node" parent="."]
 
 [node name="Companion" parent="Companions" instance=ExtResource( 3 )]
-position = Vector2( 1139, -456 )
+position = Vector2( 1165, -413 )
 
 [node name="Background" type="Node" parent="."]
 
@@ -628,7 +628,7 @@ tile_data = PoolIntArray( -1441752, 25, 0, -1048530, 25, 0, -851957, 22, 0, -851
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Enemy" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 749, -623 )
+position = Vector2( 739, -688 )
 
 [node name="Jump effect" type="AnimatedSprite" parent="."]
 visible = false
@@ -639,6 +639,6 @@ frame = 4
 script = ExtResource( 19 )
 
 [node name="Bullet" parent="." instance=ExtResource( 20 )]
-position = Vector2( 647, -567 )
+position = Vector2( 368, -670 )
 
 [connection signal="animation_finished" from="Jump effect" to="Player" method="_on_Jump_effect_animation_finished"]
