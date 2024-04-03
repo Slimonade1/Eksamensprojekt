@@ -12,4 +12,7 @@ func _on_Companion_body_entered(body):
 		print("OMG SHOWING")
 		body.showCompanion()
 		infoScreen.showing = true
+		
+		var timer = Timer.new()
+		
 		queue_free()
