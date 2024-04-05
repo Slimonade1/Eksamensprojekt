@@ -129,7 +129,7 @@ func handleShooting():
 	var newBullet = Bullet.instance()
 	newBullet.direction = playerDirection
 	bulletSpacing *= -1
-	newBullet.position = Vector2(position.x, position.y + bulletSpacing + 20)
+	newBullet.position = Vector2(position.x + 10, position.y + bulletSpacing + 20)
 	gameScene.add_child(newBullet)
 
 func _on_BulletCooldown_timeout():
@@ -140,6 +140,10 @@ func takeDamage():
 	camera.trauma = 0.3
 	if health == 0:
 		queue_free()
+	
+	sprite.modulate = Color.red
+	yield(get_tree().create_timer(0.1), "timeout")
+	sprite.modulate = Color.white
 
 
 func _on_Jump_effect_animation_finished():
