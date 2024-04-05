@@ -1,6 +1,6 @@
 extends Area2D
 
-var velocity = 5
+var velocity = 12
 var direction
 
 onready var tilemap = get_parent().get_node("Background/TileMap")
@@ -28,9 +28,8 @@ func destroyWall():
 	var pos1 : Vector2 = tilemap.world_to_map(positionInWalls1.global_position)
 	var pos2 : Vector2 = tilemap.world_to_map(positionInWalls2.global_position)
 	pos1 = Vector2(floor(pos1.x/6), floor(pos1.y/6))
-	print(pos1)
 	tilemap.set_cellv(pos1, -1)
+	
 	pos2 = Vector2(floor(pos2.x/6), floor(pos2.y/6))
-	print(pos2)
 	tilemap.set_cellv(pos2, -1)
 	

@@ -17,7 +17,7 @@ onready var playerDetection = $PlayerDetection
 
 var cooldown = false
 onready var bulletCooldown = $BulletCooldown
-var attackSpeed = 2.0
+var attackSpeed = 1.0
 var Bullet = preload("res://Scenes/Bullet.tscn")
 
 func _ready():
@@ -27,8 +27,10 @@ func _physics_process(delta):
 	if !edgeDetection.is_colliding() or is_on_wall():
 		turnAround()
 	
-	if(playerDetection.is_colliding() and !cooldown):
+	if(playerDetection.is_colliding() and !playerDetection.get_collider().is_in_group("Map") and !cooldown):
 		handleShooting()
+		var collision = playerDetection.get_collider()
+		print(collision.is_in_group("Map"))
 	
 	#reset x velocity
 	vel.x = 0
@@ -62,6 +64,11 @@ func takeDamage():
 	health -= player.damage
 	if health == 0:
 		queue_free()
+	
+	sprite.modulate = Color.red
+	yield(get_tree().create_timer(0.1), "timeout")
+	sprite.modulate = Color.white
+	
 
 func handleShooting():
 	bulletCooldown.wait_time = 1 / attackSpeed
