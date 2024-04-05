@@ -21,6 +21,7 @@ var playerDirection = "right"
 onready var sprite = $playerSprite
 onready var spriteFriend = $playerSprite/spriteFriend
 onready var jumpEffect = $"../Jump effect"
+onready var camera = $Camera2D
 
 # gun cooldown
 var cooldown = false
@@ -48,10 +49,7 @@ func _physics_process(delta):
 	if !is_on_floor() && !is_on_wall():
 		if trauma < 0.2:
 			trauma += 0.03
-		$Camera2D.trauma = trauma
-	else: 
-		trauma = -1.3
-		$Camera2D.trauma = 0.0
+			camera.trauma = trauma
 
 func handleMovement(delta):
 	#slow stop
@@ -81,6 +79,7 @@ func handleMovement(delta):
 		jumpEffect.position.y = position.y+ 30
 		jumpEffect.playing = true
 		jumpEffect.visible = true
+		trauma = -1.3
 		
 	
 	#sprite direction
@@ -136,6 +135,7 @@ func _on_BulletCooldown_timeout():
 
 func takeDamage():
 	health -= 1
+	camera.trauma = 0.3
 	if health == 0:
 		queue_free()
 
