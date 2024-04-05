@@ -94,7 +94,7 @@ func handleMovement(delta):
 		handleAnimation("running")
 		spriteFriend.animation = "running"
 		playerDirection = "left"
-	if vel.x > 0:
+	elif vel.x > 0:
 		sprite.scale.x = 1
 		handleAnimation("running")
 		spriteFriend.animation = "running"
