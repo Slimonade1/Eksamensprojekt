@@ -49,7 +49,8 @@ func _physics_process(delta):
 	if !is_on_floor() && !is_on_wall():
 		if trauma < 0.2:
 			trauma += 0.03
-			camera.trauma = trauma
+			if trauma > 0:
+				camera.trauma = trauma
 
 func handleMovement(delta):
 	#slow stop
@@ -71,6 +72,7 @@ func handleMovement(delta):
 	# wall climb
 	if is_on_wall() and Input.is_action_pressed("ui_up"):
 		vel.y -= climbSpeed
+		
 	
 	# jump
 	if Input.is_action_pressed("ui_up") and is_on_floor():
@@ -83,12 +85,15 @@ func handleMovement(delta):
 		
 	
 	#sprite direction
-	if vel.x < 0:
+	if is_on_wall():
+		handleAnimation("climbing")
+		camera.trauma = 0.15
+	elif vel.x < 0:
 		sprite.scale.x = -1
 		handleAnimation("running")
 		spriteFriend.animation = "running"
 		playerDirection = "left"
-	if vel.x > 0:
+	elif vel.x > 0:
 		sprite.scale.x = 1
 		handleAnimation("running")
 		spriteFriend.animation = "running"
@@ -115,6 +120,15 @@ func handleAnimation(action):
 			sprite.animation = "runningDMG1"
 		else:
 			sprite.animation = "runningDMG2"
+		
+	
+	if(action == "climbing"):
+		if(health > 3):
+			sprite.animation = "climbing"
+		elif(health > 1):
+			sprite.animation = "climbingDMG1"
+		else:
+			sprite.animation = "clmbingDMG2"
 
 func showCompanion():
 	spriteFriend.visible = true
@@ -123,6 +137,9 @@ func handleShooting():
 	bulletCooldown.wait_time = 1 / attackSpeed
 	bulletCooldown.start()
 	cooldown = true
+	
+	#camerashake
+	camera.trauma = 0.4
 	
 	var gameScene = get_parent()
 	var spawnPosition
