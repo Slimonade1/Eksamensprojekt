@@ -30,6 +30,7 @@ onready var bulletCooldown = $BulletCooldown
 # gun physics
 onready var tilemap = $"../Background/TileMap"
 var Bullet = preload("res://Scenes/Bullet.tscn")
+var bulletSpacing = -5
 
 
 func _ready():
@@ -127,7 +128,8 @@ func handleShooting():
 	var gameScene = get_parent()
 	var newBullet = Bullet.instance()
 	newBullet.direction = playerDirection
-	newBullet.position = position
+	bulletSpacing *= -1
+	newBullet.position = Vector2(position.x, position.y + bulletSpacing + 20)
 	gameScene.add_child(newBullet)
 
 func _on_BulletCooldown_timeout():
@@ -143,4 +145,3 @@ func takeDamage():
 func _on_Jump_effect_animation_finished():
 	jumpEffect.playing = false
 	jumpEffect.visible = false
-	pass # Replace with function body.
