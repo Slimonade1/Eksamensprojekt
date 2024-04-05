@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Climb-2_DMG_0001.png-23e2de7d0e37f82c7b7d28ec7367bb46.stex"
+path="res://.import/Climb-2_DMG_0003 (1).png-c2d41be6961123f5d1011c13fdbb9b2b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player/ClimbingDamage-2/Climb-2_DMG_0001.png"
-dest_files=[ "res://.import/Climb-2_DMG_0001.png-23e2de7d0e37f82c7b7d28ec7367bb46.stex" ]
+source_file="res://Sprites/Player/ClimbingDamage-2/Climb-2_DMG_0003 (1).png"
+dest_files=[ "res://.import/Climb-2_DMG_0003 (1).png-c2d41be6961123f5d1011c13fdbb9b2b.stex" ]
 
 [params]
 
