@@ -11,7 +11,7 @@ var trauma = 0.0
 var speed = 60
 var jumpForce = 800
 var climbSpeed = 200
-var gravity = 2000
+var gravity = 0 #2000
 
 var vel = Vector2()
 var grounded = false
@@ -30,7 +30,7 @@ onready var bulletCooldown = $BulletCooldown
 # gun physics
 onready var tilemap = $"../Background/TileMap"
 var Bullet = preload("res://Scenes/Bullet.tscn")
-var bulletSpacing = -5
+var counter = 0
 
 
 func _ready():
@@ -41,7 +41,6 @@ func _ready():
 	
 
 func _physics_process(delta):
-	
 	handleMovement(delta)
 	
 	if Input.is_action_pressed("ui_shoot") and !cooldown:
@@ -126,11 +125,22 @@ func handleShooting():
 	cooldown = true
 	
 	var gameScene = get_parent()
+	var spawnPosition
+	counter += 1
+	if counter%2 == 0:
+		spawnPosition = $GunPositionL
+	if counter%2 == 1:
+		spawnPosition = $GunPositionR
+	
 	var newBullet = Bullet.instance()
 	newBullet.direction = playerDirection
-	bulletSpacing *= -1
-	newBullet.position = Vector2(position.x + 10, position.y + bulletSpacing + 20)
+	newBullet.position = spawnPosition.global_position
 	gameScene.add_child(newBullet)
+	
+	$BangAnimation.position = spawnPosition.global_position
+	$BangAnimation.visible = true
+	$BangAnimation.playing = true
+	print($BangAnimation.position)
 
 func _on_BulletCooldown_timeout():
 	cooldown = false

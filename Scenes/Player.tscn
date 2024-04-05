@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Player/Idle/Idle_0001.png" type="Texture" id=2]
@@ -44,6 +44,10 @@
 [ext_resource path="res://Sprites/Player/WalkingDamage-2/2Dmg run_0006.png" type="Texture" id=42]
 [ext_resource path="res://Sprites/Player/WalkingDamage-2/2Dmg run_0007.png" type="Texture" id=43]
 [ext_resource path="res://Sprites/Player/WalkingDamage-2/2Dmg run_0008.png" type="Texture" id=44]
+[ext_resource path="res://Sprites/Shooting/Bang!/Bang!_0002.png" type="Texture" id=45]
+[ext_resource path="res://Sprites/Shooting/Bang!/Bang!_0001.png" type="Texture" id=46]
+[ext_resource path="res://Sprites/Shooting/Bang!/Bang!_0003.png" type="Texture" id=47]
+[ext_resource path="res://Scripts/BangAnimation.gd" type="Script" id=48]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -94,6 +98,14 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 6.5, 11.5 )
 
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 46 ), ExtResource( 45 ), ExtResource( 45 ), ExtResource( 47 ), ExtResource( 47 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="Player" type="KinematicBody2D" groups=["Players"]]
 position = Vector2( 3, -23 )
 scale = Vector2( 3, 3 )
@@ -102,7 +114,7 @@ script = ExtResource( 1 )
 
 [node name="playerSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-animation = "runningDMG2"
+animation = "idle"
 
 [node name="spriteFriend" type="AnimatedSprite" parent="playerSprite"]
 position = Vector2( -5, 4 )
@@ -116,4 +128,16 @@ shape = SubResource( 5 )
 [node name="BulletCooldown" type="Timer" parent="."]
 one_shot = true
 
+[node name="GunPositionL" type="Position2D" parent="."]
+position = Vector2( -1, 11 )
+
+[node name="GunPositionR" type="Position2D" parent="."]
+position = Vector2( 10, 11 )
+
+[node name="BangAnimation" type="AnimatedSprite" parent="."]
+position = Vector2( 11, -10 )
+frames = SubResource( 6 )
+script = ExtResource( 48 )
+
 [connection signal="timeout" from="BulletCooldown" to="." method="_on_BulletCooldown_timeout"]
+[connection signal="animation_finished" from="BangAnimation" to="BangAnimation" method="_on_BangAnimation_animation_finished"]

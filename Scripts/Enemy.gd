@@ -24,13 +24,13 @@ func _ready():
 	sprite.playing = true
 
 func _physics_process(delta):
+	# Dynamic edge detection
 	if !edgeDetection.is_colliding() or is_on_wall():
 		turnAround()
 	
+	# If enemy sees player, and is not blocked by a wall
 	if(playerDetection.is_colliding() and !playerDetection.get_collider().is_in_group("Map") and !cooldown):
 		handleShooting()
-		var collision = playerDetection.get_collider()
-		print(collision.is_in_group("Map"))
 	
 	#reset x velocity
 	vel.x = 0
