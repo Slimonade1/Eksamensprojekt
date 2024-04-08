@@ -6,6 +6,14 @@ var direction
 onready var tilemap = get_parent().get_node("Background/TileMap")
 onready var positionInWalls1 = $PositionInWalls1
 onready var positionInWalls2 = $PositionInWalls2
+onready var positionInWalls3 = $PositionInWalls3
+onready var positionInWalls4 = $PositionInWalls4
+var posInWall = []
+
+func _ready():
+	for n in get_child_count():
+		if get_child(n).is_in_group("PositionInWalls"):
+			posInWall.push_back(get_child(n))
 
 func _physics_process(delta):
 	if direction == "left":
@@ -25,11 +33,10 @@ func _on_Bullet_body_entered(body):
 	queue_free()
 
 func destroyWall():
-	var pos1 : Vector2 = tilemap.world_to_map(positionInWalls1.global_position)
-	var pos2 : Vector2 = tilemap.world_to_map(positionInWalls2.global_position)
-	pos1 = Vector2(floor(pos1.x/6), floor(pos1.y/6))
-	tilemap.set_cellv(pos1, -1)
-	
-	pos2 = Vector2(floor(pos2.x/6), floor(pos2.y/6))
-	tilemap.set_cellv(pos2, -1)
+	var pos = [PoolVector2Array()]
+	for n in posInWall.size():
+		pos.append(tilemap.world_to_map(posInWall[n].global_position))
+		pos[n+1] = tilemap.world_to_map(posInWall[n].global_position)
+		pos[n+1] = Vector2(floor(pos[n+1].x/6), floor(pos[n+1].y/6))
+		tilemap.set_cellv(pos[n+1], -1)
 	

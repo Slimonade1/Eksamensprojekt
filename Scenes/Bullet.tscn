@@ -19,10 +19,16 @@ texture = ExtResource( 1 )
 position = Vector2( 0, 0.25 )
 shape = SubResource( 1 )
 
-[node name="PositionInWalls1" type="Position2D" parent="."]
+[node name="PositionInWalls1" type="Position2D" parent="." groups=["PositionInWalls"]]
 position = Vector2( 40, -14 )
 
-[node name="PositionInWalls2" type="Position2D" parent="."]
+[node name="PositionInWalls2" type="Position2D" parent="." groups=["PositionInWalls"]]
 position = Vector2( 40, 14 )
+
+[node name="PositionInWalls3" type="Position2D" parent="." groups=["PositionInWalls"]]
+position = Vector2( -24, -14 )
+
+[node name="PositionInWalls4" type="Position2D" parent="." groups=["PositionInWalls"]]
+position = Vector2( -24, 14 )
 
 [connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]

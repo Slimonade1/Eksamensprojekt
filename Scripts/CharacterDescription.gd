@@ -4,6 +4,7 @@ var is_paused = false setget set_is_paused
 onready var description = $CanvasLayer
 onready var showing = false
 var inputCooldown = 3
+var maxTime = 15
 var cooldown = false
 var showDescription = false
 
@@ -14,6 +15,7 @@ func _process(delta):
 		cooldown = true
 	
 	if cooldown:
+		maxTime -= delta
 		inputCooldown -= delta
 	
 	if inputCooldown <= 0:
@@ -21,6 +23,9 @@ func _process(delta):
 		inputCooldown = 3
 		showDescription = true
 	
+	if maxTime <= 0:
+		showing = false
+		self.is_paused = false
 
 func set_is_paused(value):
 	is_paused = value
