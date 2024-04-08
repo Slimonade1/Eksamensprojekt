@@ -11,7 +11,7 @@ var trauma = 0.0
 var speed = 60
 var jumpForce = 800
 var climbSpeed = 200
-var gravity = 0 #2000
+var gravity = 2000
 
 var vel = Vector2()
 var grounded = false
