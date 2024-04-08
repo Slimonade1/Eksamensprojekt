@@ -82,7 +82,7 @@ texture = ExtResource( 3 )
 script = ExtResource( 4 )
 
 [node name="DramaticEffectButtom3" type="Sprite" parent="CanvasLayer/Top"]
-position = Vector2( 1310, -49 )
+position = Vector2( 1311, -49 )
 rotation = -3.1957
 scale = Vector2( 7, 7 )
 texture = ExtResource( 3 )
@@ -98,3 +98,8 @@ custom_fonts/normal_font = ExtResource( 6 )
 text = "Maria Kira Peter
 
 TestTestTest"
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 1751, 415 )
+rotation = 3.08749
+scale = Vector2( 7, 7 )

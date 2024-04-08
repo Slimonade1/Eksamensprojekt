@@ -154,10 +154,9 @@ func handleShooting():
 	newBullet.position = spawnPosition.global_position
 	gameScene.add_child(newBullet)
 	
-	$BangAnimation.position = spawnPosition.global_position
+	$BangAnimation.position = spawnPosition.position
 	$BangAnimation.visible = true
 	$BangAnimation.playing = true
-	print($BangAnimation.position)
 
 func _on_BulletCooldown_timeout():
 	cooldown = false

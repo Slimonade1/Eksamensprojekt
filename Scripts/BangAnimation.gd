@@ -1,10 +1,9 @@
 extends AnimatedSprite
 
 func _ready():
-	pass
-	#visible = false
+	visible = false
 
 func _on_BangAnimation_animation_finished():
-	#visible = false
+	visible = false
 	playing = false
 	

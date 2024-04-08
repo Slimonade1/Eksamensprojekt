@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=2]
+[gd_scene load_steps=80 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Player/Idle/Idle_0001.png" type="Texture" id=2]
@@ -72,6 +72,9 @@
 [ext_resource path="res://Sprites/Player/Climbing/Climbing_0005.png" type="Texture" id=70]
 [ext_resource path="res://Sprites/Player/Climbing/Climbing_0007.png" type="Texture" id=71]
 [ext_resource path="res://Scripts/BangAnimation.gd" type="Script" id=72]
+[ext_resource path="res://Sprites/Shooting/Bang!/Bang!_0003.png" type="Texture" id=73]
+[ext_resource path="res://Sprites/Shooting/Bang!/Bang!_0001.png" type="Texture" id=74]
+[ext_resource path="res://Sprites/Shooting/Bang!/Bang!_0002.png" type="Texture" id=75]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -139,16 +142,16 @@ extents = Vector2( 6.5, 11.5 )
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ ExtResource( 46 ), ExtResource( 45 ), ExtResource( 45 ), ExtResource( 47 ), ExtResource( 47 ) ],
+"frames": [ ExtResource( 74 ), ExtResource( 75 ), ExtResource( 75 ), ExtResource( 73 ), ExtResource( 73 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 24.0
 } ]
 
 [node name="Player" type="KinematicBody2D" groups=["Players"]]
 position = Vector2( 3, -23 )
 scale = Vector2( 3, 3 )
-collision_mask = 4
+collision_mask = 36
 script = ExtResource( 1 )
 
 [node name="playerSprite" type="AnimatedSprite" parent="."]
@@ -174,8 +177,7 @@ position = Vector2( -1, 11 )
 position = Vector2( 10, 11 )
 
 [node name="BangAnimation" type="AnimatedSprite" parent="."]
-visible = false
-position = Vector2( 11, -10 )
+position = Vector2( 3.66667, -8.33333 )
 frames = SubResource( 6 )
 script = ExtResource( 72 )
 
