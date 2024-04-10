@@ -87,9 +87,11 @@ func handleMovement(delta):
 	#sprite direction
 	if is_on_wall():
 		handleAnimation("climbing")
+		spriteFriend.animation = "climbing"
 		camera.trauma = 0.15
 	elif !is_on_floor():
 		handleAnimation("jumping")
+		spriteFriend.animation = "jumping"
 	elif vel.x < 0:
 		sprite.scale.x = -1
 		handleAnimation("running")
