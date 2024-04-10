@@ -92,6 +92,10 @@ func handleMovement(delta):
 	elif !is_on_floor():
 		handleAnimation("jumping")
 		spriteFriend.animation = "jumping"
+		if vel.x < 0:
+			sprite.scale.x = -1
+		elif vel.x > 0:
+			sprite.scale.x = 1
 	elif vel.x < 0:
 		sprite.scale.x = -1
 		handleAnimation("running")
