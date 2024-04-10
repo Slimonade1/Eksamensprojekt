@@ -64,7 +64,7 @@ func handleMovement(delta):
 		vel.x += speed
 	
 	#apply gravity to player
-	if is_on_wall():
+	if is_on_wall() and Input.is_action_pressed("ui_up"):
 		vel.y = 0
 	else:
 		vel.y += gravity * delta
@@ -145,18 +145,18 @@ func handleShooting():
 	var spawnPosition
 	counter += 1
 	if counter%2 == 0:
-		spawnPosition = $GunPositionL
+		spawnPosition = $playerSprite/GunPositionL
 	if counter%2 == 1:
-		spawnPosition = $GunPositionR
+		spawnPosition = $playerSprite/GunPositionR
 	
 	var newBullet = Bullet.instance()
 	newBullet.direction = playerDirection
 	newBullet.position = spawnPosition.global_position
 	gameScene.add_child(newBullet)
 	
-	$BangAnimation.position = spawnPosition.position
-	$BangAnimation.visible = true
-	$BangAnimation.playing = true
+	$playerSprite/BangAnimation.position = spawnPosition.position
+	$playerSprite/BangAnimation.visible = true
+	$playerSprite/BangAnimation.playing = true
 
 func _on_BulletCooldown_timeout():
 	cooldown = false

@@ -137,9 +137,6 @@ animations = [ {
 "speed": 24.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 6.5, 11.5 )
-
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
 "frames": [ ExtResource( 74 ), ExtResource( 75 ), ExtResource( 75 ), ExtResource( 73 ), ExtResource( 73 ) ],
@@ -147,6 +144,9 @@ animations = [ {
 "name": "default",
 "speed": 24.0
 } ]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 6.5, 11.5 )
 
 [node name="Player" type="KinematicBody2D" groups=["Players"]]
 position = Vector2( 3, -23 )
@@ -156,12 +156,25 @@ script = ExtResource( 1 )
 
 [node name="playerSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-animation = "climbing"
+animation = "idle"
 
 [node name="spriteFriend" type="AnimatedSprite" parent="playerSprite"]
 position = Vector2( -5, 4 )
 frames = SubResource( 4 )
 animation = "running"
+
+[node name="GunPositionL" type="Position2D" parent="playerSprite"]
+position = Vector2( -1, 11 )
+
+[node name="GunPositionR" type="Position2D" parent="playerSprite"]
+position = Vector2( 10, 11 )
+
+[node name="BangAnimation" type="AnimatedSprite" parent="playerSprite"]
+visible = false
+position = Vector2( 24.3333, -2 )
+frames = SubResource( 6 )
+frame = 3
+script = ExtResource( 72 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -3.5, 8.5 )
@@ -170,16 +183,5 @@ shape = SubResource( 5 )
 [node name="BulletCooldown" type="Timer" parent="."]
 one_shot = true
 
-[node name="GunPositionL" type="Position2D" parent="."]
-position = Vector2( -1, 11 )
-
-[node name="GunPositionR" type="Position2D" parent="."]
-position = Vector2( 10, 11 )
-
-[node name="BangAnimation" type="AnimatedSprite" parent="."]
-position = Vector2( 3.66667, -8.33333 )
-frames = SubResource( 6 )
-script = ExtResource( 72 )
-
+[connection signal="animation_finished" from="playerSprite/BangAnimation" to="playerSprite/BangAnimation" method="_on_BangAnimation_animation_finished"]
 [connection signal="timeout" from="BulletCooldown" to="." method="_on_BulletCooldown_timeout"]
-[connection signal="animation_finished" from="BangAnimation" to="BangAnimation" method="_on_BangAnimation_animation_finished"]
