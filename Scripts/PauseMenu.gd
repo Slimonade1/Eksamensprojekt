@@ -22,4 +22,5 @@ func _on_Quit_pressed():
 
 func _on_Last_Checkpoint_pressed():
 	get_tree().change_scene("res://Scenes/gameScene.tscn")
+	Singletons.gameTime = 0
 	self.is_paused = false

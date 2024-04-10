@@ -9,3 +9,7 @@
 position = Vector2( 27, -1 )
 
 [node name="Database" parent="." instance=ExtResource( 3 )]
+margin_left = 3158.0
+margin_top = -2066.0
+margin_right = 3158.0
+margin_bottom = -2066.0
