@@ -640,6 +640,7 @@ frame = 4
 script = ExtResource( 19 )
 
 [node name="WinArea" parent="." instance=ExtResource( 20 )]
-position = Vector2( 2023, -399 )
+position = Vector2( 2042, -425 )
+scale = Vector2( 3, 3 )
 
 [connection signal="animation_finished" from="Jump effect" to="Player" method="_on_Jump_effect_animation_finished"]
