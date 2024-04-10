@@ -144,9 +144,19 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "climbing",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 16 ), ExtResource( 17 ) ],
 "loop": true,
 "name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "jumping",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 17 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 17 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 16 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 17 ) ],
@@ -179,6 +189,7 @@ animation = "jumpingDMG2"
 [node name="spriteFriend" type="AnimatedSprite" parent="playerSprite"]
 position = Vector2( -5, 5 )
 frames = SubResource( 4 )
+animation = "climbing"
 
 [node name="GunPositionL" type="Position2D" parent="playerSprite"]
 position = Vector2( -1, 11 )

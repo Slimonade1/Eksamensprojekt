@@ -8,13 +8,21 @@ const SECRET_KEY = "myPasswordNoStealPlsDDU!"
 var nonce = null
 var request_queue : Array = []
 var is_requesting : bool = false
-var gameTime
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
-	gameTime = Singletons.gameTime
-	$Time.text = String(floor(Singletons.gameTime))
+	
+	var time = int(Singletons.gameTime)
+	var secs = fmod(time,60)
+	var mins = fmod(time,60*60) / 60
+	var timeText = "%02d : %02d" % [mins,secs]
+	$Time.text = "Your time: " + String(timeText)
+	
+	var command = "get_times"
+	var data = {"time_ofset" : 0, "time_number" : 10}
+	request_queue.push_back({"command" : command, "data" : data})
+	
 	add_child(http_request)
 	http_request.connect("request_completed", self, "_http_request_completed")
 
@@ -102,7 +110,7 @@ func _http_request_completed(_result, _response_code, _headers, _body):
 			var timeText = "%02d : %02d" % [mins,secs]
 			$TextEdit.set_text($TextEdit.get_text() + String(n + 1) + ": " + String(response['response'][String(n)]['player_name']) + "\t\t" + String(timeText) + "\n")
 	else:	
-		$TextEdit.set_text("No data")
+		$TextEdit.set_text("")
 	
 	
 func _submit_time():
@@ -112,10 +120,10 @@ func _submit_time():
 	var data = {"username" : user_name, "time" : time}
 	request_queue.push_back({"command" : command, "data" : data})
 	
-func _get_times():
-	var command = "get_times"
-	var data = {"time_ofset" : 0, "time_number" : 10}
+	command = "get_times"
+	data = {"time_ofset" : 0, "time_number" : 10}
 	request_queue.push_back({"command" : command, "data" : data})
+	
 
 
 
