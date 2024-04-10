@@ -8,12 +8,15 @@ const SECRET_KEY = "myPasswordNoStealPlsDDU!"
 var nonce = null
 var request_queue : Array = []
 var is_requesting : bool = false
+var gameTime
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
+	gameTime = Singletons.gameTime
+	$Time.text = String(floor(Singletons.gameTime))
 	add_child(http_request)
-	http_request.connect("request_completed",self,"_http_request_completed")
+	http_request.connect("request_completed", self, "_http_request_completed")
 
 
 func _process(delta):
@@ -97,7 +100,7 @@ func _http_request_completed(_result, _response_code, _headers, _body):
 			var secs = fmod(time,60)
 			var mins = fmod(time,60*60) / 60
 			var timeText = "%02d : %02d" % [mins,secs]
-			$TextEdit.set_text($TextEdit.get_text() + String(response['response'][String(n)]['player_name']) + "\t\t" + String(timeText) + "\n")
+			$TextEdit.set_text($TextEdit.get_text() + String(n + 1) + ": " + String(response['response'][String(n)]['player_name']) + "\t\t" + String(timeText) + "\n")
 	else:	
 		$TextEdit.set_text("No data")
 	

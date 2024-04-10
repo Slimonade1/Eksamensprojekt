@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Sprites/JumpEffect/Jump_effect_0004.png" type="Texture" id=18]
 [ext_resource path="res://Scripts/Jump effect.gd" type="Script" id=19]
 [ext_resource path="res://Scenes/WinArea.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scripts/gameScene.gd" type="Script" id=21]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -584,7 +585,7 @@ animations = [ {
 } ]
 
 [node name="gameScene" type="Node2D"]
-script = ExtResource( 5 )
+script = ExtResource( 21 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
