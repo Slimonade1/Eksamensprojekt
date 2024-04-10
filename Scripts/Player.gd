@@ -88,6 +88,8 @@ func handleMovement(delta):
 	if is_on_wall():
 		handleAnimation("climbing")
 		camera.trauma = 0.15
+	elif !is_on_floor():
+		handleAnimation("jumping")
 	elif vel.x < 0:
 		sprite.scale.x = -1
 		handleAnimation("running")
@@ -129,6 +131,14 @@ func handleAnimation(action):
 			sprite.animation = "climbingDMG1"
 		else:
 			sprite.animation = "clmbingDMG2"
+	
+	if(action == "jumping"):
+		if(health > 3):
+			sprite.animation = "jumping"
+		elif(health > 1):
+			sprite.animation = "jumpingDMG1"
+		else:
+			sprite.animation = "jumpingDMG2"
 
 func showCompanion():
 	spriteFriend.visible = true
