@@ -600,7 +600,7 @@ margin_right = 387.0
 margin_bottom = -708.0
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -171, -523 )
+position = Vector2( 627, -775 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( 0, 10 )
@@ -616,6 +616,10 @@ position = Vector2( 1165, -413 )
 
 [node name="Companion2" parent="Companions" instance=ExtResource( 3 )]
 position = Vector2( 4, -429 )
+
+[node name="Companion3" parent="Companions" instance=ExtResource( 3 )]
+position = Vector2( 778, -673 )
+politiker = "niels"
 
 [node name="Background" type="Node" parent="."]
 

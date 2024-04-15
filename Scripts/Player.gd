@@ -6,6 +6,7 @@ var attackSpeed = 2.0
 var health = 5
 var trauma = 0.0
 var currentPowerUp = ""
+var bulletSize = 1
 
 # physics
 var speed = 60
@@ -170,6 +171,7 @@ func handleShooting():
 	var newBullet = Bullet.instance()
 	newBullet.direction = playerDirection
 	newBullet.position = spawnPosition.global_position
+	newBullet.bulletSize = bulletSize
 	gameScene.add_child(newBullet)
 	
 	$playerSprite/BangAnimation.position = spawnPosition.position
@@ -195,4 +197,12 @@ func _on_Jump_effect_animation_finished():
 	jumpEffect.visible = false
 
 func handlePowerUps():
-	pass
+	if currentPowerUp == "bergur":
+		speed = 80
+	else:
+		speed = 60
+	
+	if currentPowerUp == "niels":
+		bulletSize = 1.5
+	else:
+		bulletSize = 1
