@@ -1,11 +1,11 @@
 extends KinematicBody2D
 
 # stats
-var score = 0
 var damage = 1
 var attackSpeed = 2.0
 var health = 5
 var trauma = 0.0
+var currentPowerUp = ""
 
 # physics
 var speed = 60
@@ -32,7 +32,6 @@ onready var tilemap = $"../Background/TileMap"
 var Bullet = preload("res://Scenes/Bullet.tscn")
 var counter = 0
 
-
 func _ready():
 	sprite.playing = true
 	
@@ -51,6 +50,8 @@ func _physics_process(delta):
 			trauma += 0.03
 			if trauma > 0:
 				camera.trauma = trauma
+	
+	handlePowerUps()
 
 func handleMovement(delta):
 	#slow stop
@@ -148,6 +149,7 @@ func handleAnimation(action):
 
 func showCompanion():
 	spriteFriend.visible = true
+	
 
 func handleShooting():
 	bulletCooldown.wait_time = 1 / attackSpeed
@@ -191,3 +193,6 @@ func takeDamage():
 func _on_Jump_effect_animation_finished():
 	jumpEffect.playing = false
 	jumpEffect.visible = false
+
+func handlePowerUps():
+	pass

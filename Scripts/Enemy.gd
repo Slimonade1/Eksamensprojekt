@@ -65,6 +65,10 @@ func takeDamage():
 	if health == 0:
 		queue_free()
 	
+	if player.currentPowerUp == "kira":
+		if player.health < 5:
+			player.health += 1
+	
 	sprite.modulate = Color.red
 	yield(get_tree().create_timer(0.1), "timeout")
 	sprite.modulate = Color.white

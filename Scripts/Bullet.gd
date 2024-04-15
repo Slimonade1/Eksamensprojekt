@@ -4,10 +4,6 @@ var velocity = 12
 var direction
 
 onready var tilemap = get_parent().get_node("Background/TileMap")
-onready var positionInWalls1 = $PositionInWalls1
-onready var positionInWalls2 = $PositionInWalls2
-onready var positionInWalls3 = $PositionInWalls3
-onready var positionInWalls4 = $PositionInWalls4
 var posInWall = []
 
 func _ready():
