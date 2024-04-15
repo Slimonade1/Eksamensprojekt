@@ -2,7 +2,7 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DramaticEffect.png-c63a5527aae1150b6953f2bd0a512967.stex"
+path="res://import/DramaticEffect.png-c63a5527aae1150b6953f2bd0a512967.stex"
 metadata={
 "vram_texture": false
 }
@@ -10,7 +10,7 @@ metadata={
 [deps]
 
 source_file="res://Sprites/Companions/Cinematic/DramaticEffect.png"
-dest_files=[ "res://.import/DramaticEffect.png-c63a5527aae1150b6953f2bd0a512967.stex" ]
+dest_files=[ "res://import/DramaticEffect.png-c63a5527aae1150b6953f2bd0a512967.stex" ]
 
 [params]
 

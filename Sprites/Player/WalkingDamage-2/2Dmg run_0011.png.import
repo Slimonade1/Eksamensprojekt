@@ -2,7 +2,7 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/2Dmg run_0011.png-d2f576a0ca49fcb384973499dd394850.stex"
+path="res://import/2Dmg run_0011.png-d2f576a0ca49fcb384973499dd394850.stex"
 metadata={
 "vram_texture": false
 }
@@ -10,7 +10,7 @@ metadata={
 [deps]
 
 source_file="res://Sprites/Player/WalkingDamage-2/2Dmg run_0011.png"
-dest_files=[ "res://.import/2Dmg run_0011.png-d2f576a0ca49fcb384973499dd394850.stex" ]
+dest_files=[ "res://import/2Dmg run_0011.png-d2f576a0ca49fcb384973499dd394850.stex" ]
 
 [params]
 

@@ -2,7 +2,7 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Fange_0003.png-55513b4de20689c1be694366dbb139eb.stex"
+path="res://import/Fange_0003.png-55513b4de20689c1be694366dbb139eb.stex"
 metadata={
 "vram_texture": false
 }
@@ -10,7 +10,7 @@ metadata={
 [deps]
 
 source_file="res://Sprites/Companions/AfraidGut1/Fange_0003.png"
-dest_files=[ "res://.import/Fange_0003.png-55513b4de20689c1be694366dbb139eb.stex" ]
+dest_files=[ "res://import/Fange_0003.png-55513b4de20689c1be694366dbb139eb.stex" ]
 
 [params]
 

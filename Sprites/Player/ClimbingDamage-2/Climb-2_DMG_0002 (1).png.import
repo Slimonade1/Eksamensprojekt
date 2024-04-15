@@ -2,7 +2,7 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Climb-2_DMG_0002 (1).png-b335fa56677018fdcd9aac2357adfe85.stex"
+path="res://import/Climb-2_DMG_0002 (1).png-b335fa56677018fdcd9aac2357adfe85.stex"
 metadata={
 "vram_texture": false
 }
@@ -10,7 +10,7 @@ metadata={
 [deps]
 
 source_file="res://Sprites/Player/ClimbingDamage-2/Climb-2_DMG_0002 (1).png"
-dest_files=[ "res://.import/Climb-2_DMG_0002 (1).png-b335fa56677018fdcd9aac2357adfe85.stex" ]
+dest_files=[ "res://import/Climb-2_DMG_0002 (1).png-b335fa56677018fdcd9aac2357adfe85.stex" ]
 
 [params]
 

@@ -2,7 +2,7 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/greenDark.png-cc3eada343ddd3f845d7ca67ff8c4d6b.stex"
+path="res://import/greenDark.png-cc3eada343ddd3f845d7ca67ff8c4d6b.stex"
 metadata={
 "vram_texture": false
 }
@@ -10,7 +10,7 @@ metadata={
 [deps]
 
 source_file="res://Sprites/Map/Tilemaps/Græsverden/greenDark.png"
-dest_files=[ "res://.import/greenDark.png-cc3eada343ddd3f845d7ca67ff8c4d6b.stex" ]
+dest_files=[ "res://import/greenDark.png-cc3eada343ddd3f845d7ca67ff8c4d6b.stex" ]
 
 [params]
 
