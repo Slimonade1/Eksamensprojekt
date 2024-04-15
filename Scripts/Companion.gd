@@ -11,6 +11,7 @@ func _on_Companion_body_entered(body):
 	if body.name == "Player":
 		body.showCompanion()
 		body.currentPowerUp = politiker
+		infoScreen.politiker = politiker
 		infoScreen.showing = true
 		
 		queue_free()
