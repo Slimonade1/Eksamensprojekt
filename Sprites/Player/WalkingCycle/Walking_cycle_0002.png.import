@@ -2,7 +2,7 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Walking_cycle_0002.png-71f61a6058ab40fe8e2dc0e778f307a6.stex"
+path="res://import/Walking_cycle_0002.png-71f61a6058ab40fe8e2dc0e778f307a6.stex"
 metadata={
 "vram_texture": false
 }
@@ -10,7 +10,7 @@ metadata={
 [deps]
 
 source_file="res://Sprites/Player/WalkingCycle/Walking_cycle_0002.png"
-dest_files=[ "res://.import/Walking_cycle_0002.png-71f61a6058ab40fe8e2dc0e778f307a6.stex" ]
+dest_files=[ "res://import/Walking_cycle_0002.png-71f61a6058ab40fe8e2dc0e778f307a6.stex" ]
 
 [params]
 

@@ -2,7 +2,7 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/enemyRun_0010.png-938386cd70c2320639f25d5a8c33d501.stex"
+path="res://import/enemyRun_0010.png-938386cd70c2320639f25d5a8c33d501.stex"
 metadata={
 "vram_texture": false
 }
@@ -10,7 +10,7 @@ metadata={
 [deps]
 
 source_file="res://Sprites/Enemies/AlienEnemy/enemyRun_0010.png"
-dest_files=[ "res://.import/enemyRun_0010.png-938386cd70c2320639f25d5a8c33d501.stex" ]
+dest_files=[ "res://import/enemyRun_0010.png-938386cd70c2320639f25d5a8c33d501.stex" ]
 
 [params]
 

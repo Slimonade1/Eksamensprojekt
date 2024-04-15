@@ -2,7 +2,7 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Bullet.png-405df5ca8b58e8ef8ddfcb63a8aa099c.stex"
+path="res://import/Bullet.png-405df5ca8b58e8ef8ddfcb63a8aa099c.stex"
 metadata={
 "vram_texture": false
 }
@@ -10,7 +10,7 @@ metadata={
 [deps]
 
 source_file="res://Sprites/Shooting/Bullet.png"
-dest_files=[ "res://.import/Bullet.png-405df5ca8b58e8ef8ddfcb63a8aa099c.stex" ]
+dest_files=[ "res://import/Bullet.png-405df5ca8b58e8ef8ddfcb63a8aa099c.stex" ]
 
 [params]
 

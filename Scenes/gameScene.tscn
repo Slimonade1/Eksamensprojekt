@@ -613,11 +613,9 @@ script = ExtResource( 8 )
 
 [node name="Companion" parent="Companions" instance=ExtResource( 3 )]
 position = Vector2( 1165, -413 )
-politiker = "kira"
 
 [node name="Companion2" parent="Companions" instance=ExtResource( 3 )]
 position = Vector2( 4, -429 )
-politiker = "bergur"
 
 [node name="Background" type="Node" parent="."]
 

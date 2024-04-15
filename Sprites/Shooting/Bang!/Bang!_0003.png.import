@@ -2,7 +2,7 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Bang!_0003.png-fbe6bdd4337bcb20bc222ee9c5f7b652.stex"
+path="res://import/Bang!_0003.png-fbe6bdd4337bcb20bc222ee9c5f7b652.stex"
 metadata={
 "vram_texture": false
 }
@@ -10,7 +10,7 @@ metadata={
 [deps]
 
 source_file="res://Sprites/Shooting/Bang!/Bang!_0003.png"
-dest_files=[ "res://.import/Bang!_0003.png-fbe6bdd4337bcb20bc222ee9c5f7b652.stex" ]
+dest_files=[ "res://import/Bang!_0003.png-fbe6bdd4337bcb20bc222ee9c5f7b652.stex" ]
 
 [params]
 
