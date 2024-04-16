@@ -2,7 +2,7 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://import/Kira_bange_0001.png-3b5436c54c6f5593e1644c3d80b250cd.stex"
+path="res://.import/Kira_bange_0001.png-3b5436c54c6f5593e1644c3d80b250cd.stex"
 metadata={
 "vram_texture": false
 }
@@ -10,7 +10,7 @@ metadata={
 [deps]
 
 source_file="res://Sprites/Companions/Kira bange/Kira_bange_0001.png"
-dest_files=[ "res://import/Kira_bange_0001.png-3b5436c54c6f5593e1644c3d80b250cd.stex" ]
+dest_files=[ "res://.import/Kira_bange_0001.png-3b5436c54c6f5593e1644c3d80b250cd.stex" ]
 
 [params]
 

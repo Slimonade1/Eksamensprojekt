@@ -85,27 +85,27 @@ func handleMovement(delta):
 		trauma = -1.3
 		
 	
-	#sprite direction
+	#sprite direction and animation
 	if is_on_wall():
 		handleAnimation("climbing")
-		spriteFriend.animation = "climbing"
 		camera.trauma = 0.15
+	
 	elif !is_on_floor():
 		handleAnimation("jumping")
-		spriteFriend.animation = "jumping"
 		if vel.x < 0:
 			sprite.scale.x = -1
-		elif vel.x > 0:
+			playerDirection = "left"
+		if vel.x > 0:
 			sprite.scale.x = 1
+			playerDirection = "right"
+	
 	elif vel.x < 0:
 		sprite.scale.x = -1
 		handleAnimation("running")
-		spriteFriend.animation = "running"
 		playerDirection = "left"
 	elif vel.x > 0:
 		sprite.scale.x = 1
 		handleAnimation("running")
-		spriteFriend.animation = "running"
 		playerDirection = "right"
 	if vel.x == 0:
 		handleAnimation("idle")
@@ -123,6 +123,7 @@ func handleAnimation(action):
 			sprite.animation = "idleDMG2"
 		
 	if(action == "running"):
+		spriteFriend.animation = "running"
 		if(health > 3):
 			sprite.animation = "running"
 		elif(health > 1):
@@ -132,14 +133,16 @@ func handleAnimation(action):
 		
 	
 	if(action == "climbing"):
+		spriteFriend.animation = "climbing"
 		if(health > 3):
 			sprite.animation = "climbing"
 		elif(health > 1):
 			sprite.animation = "climbingDMG1"
 		else:
-			sprite.animation = "clmbingDMG2"
+			sprite.animation = "climbingDMG2"
 	
 	if(action == "jumping"):
+		spriteFriend.animation = "jumping"
 		if(health > 3):
 			sprite.animation = "jumping"
 		elif(health > 1):

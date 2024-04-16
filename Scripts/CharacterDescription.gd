@@ -53,7 +53,6 @@ func _on_CanvasLayer_visibility_changed():
 	$MaxTime.start()
 	$MaxTime.wait_time = 15
 	
-	
 
 func _on_InputCooldown_timeout():
 	showDescription = true

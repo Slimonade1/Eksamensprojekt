@@ -2,7 +2,7 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://import/Bergur_bange_0002.png-89ae0a3bc3c6b7797e3de4fa8e80162a.stex"
+path="res://.import/Bergur_bange_0002.png-89ae0a3bc3c6b7797e3de4fa8e80162a.stex"
 metadata={
 "vram_texture": false
 }
@@ -10,7 +10,7 @@ metadata={
 [deps]
 
 source_file="res://Sprites/Companions/Bergur bange/Bergur_bange_0002.png"
-dest_files=[ "res://import/Bergur_bange_0002.png-89ae0a3bc3c6b7797e3de4fa8e80162a.stex" ]
+dest_files=[ "res://.import/Bergur_bange_0002.png-89ae0a3bc3c6b7797e3de4fa8e80162a.stex" ]
 
 [params]
 
