@@ -115,7 +115,7 @@ func _http_request_completed(_result, _response_code, _headers, _body):
 	
 func _submit_time():
 	var user_name = $PlayerName.get_text()
-	var time = $Time.get_text()
+	var time = int($Time.get_text())
 	var command = "add_time"
 	var data = {"username" : user_name, "time" : time}
 	request_queue.push_back({"command" : command, "data" : data})
