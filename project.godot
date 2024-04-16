@@ -12,7 +12,6 @@ config_version=4
 
 config/name="Eksamensprojekt"
 run/main_scene="res://Scenes/masterScene.tscn"
-config/use_hidden_project_data_directory=false
 config/icon="res://icon.png"
 
 [autoload]

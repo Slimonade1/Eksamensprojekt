@@ -3,29 +3,23 @@ extends Control
 var is_paused = false setget set_is_paused
 onready var description = $CanvasLayer
 onready var showing = false
-var inputCooldown = 3
-var maxTime = 15
-var cooldown = false
 var showDescription = false
+var politiker
 
 func _process(delta):
 	if showing:
 		self.is_paused = true
 		set_is_paused(self.is_paused)
-		cooldown = true
 	
-	if cooldown:
-		maxTime -= delta
-		inputCooldown -= delta
-	
-	if inputCooldown <= 0:
-		cooldown = false
-		inputCooldown = 3
-		showDescription = true
-	
-	if maxTime <= 0:
-		showing = false
-		self.is_paused = false
+	$CanvasLayer/ColorRect/Kira.visible = false
+	$CanvasLayer/ColorRect/Bergur.visible = false
+	$CanvasLayer/ColorRect/Niels.visible = false
+	if politiker == "kira":
+		$CanvasLayer/ColorRect/Kira.visible = true
+	if politiker == "bergur":
+		$CanvasLayer/ColorRect/Bergur.visible = true
+	if politiker == "niels":
+		$CanvasLayer/ColorRect/Niels.visible = true
 
 func set_is_paused(value):
 	is_paused = value
@@ -36,3 +30,20 @@ func _input(event):
 	if event is InputEventKey and event.pressed and showDescription:
 		showing = false
 		self.is_paused = false
+
+func _on_CanvasLayer_visibility_changed():
+	showDescription = false
+	
+	$InputCooldown.start()
+	$InputCooldown.wait_time = 3
+	
+	$MaxTime.start()
+	$MaxTime.wait_time = 15
+	
+
+func _on_InputCooldown_timeout():
+	showDescription = true
+
+func _on_MaxTime_timeout():
+	showing = false
+	self.is_paused = false
