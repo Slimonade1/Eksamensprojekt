@@ -5,7 +5,7 @@
 [ext_resource path="res://Sprites/X/362-3625552_cross-red-x-pixel-art.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/TitleScreen/7fe9d6e6af9bd6b2821b024ef5a9078b.png" type="Texture" id=4]
 
-[node name="Control" type="Control"]
+[node name="StartScene" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )

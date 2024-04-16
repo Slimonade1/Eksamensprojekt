@@ -113,6 +113,10 @@ func handleMovement(delta):
 		spriteFriend.animation = "idle"
 	
 	vel = move_and_slide(vel, Vector2.UP)
+	
+	if position.y > 0:
+		get_tree().change_scene("res://Scenes/gameScene.tscn")
+		Singletons.gameTime = 0
 
 func handleAnimation(action):
 	if(action == "idle"):
@@ -187,7 +191,8 @@ func takeDamage():
 	health -= 1
 	camera.trauma = 0.3
 	if health == 0:
-		queue_free()
+		get_tree().change_scene("res://Scenes/gameScene.tscn")
+		Singletons.gameTime = 0
 	
 	sprite.modulate = Color.red
 	yield(get_tree().create_timer(0.1), "timeout")

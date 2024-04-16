@@ -3,7 +3,7 @@ extends Area2D
 var velocity = 12
 var direction
 
-onready var tilemap = get_parent().get_node("Map/TileMap")
+onready var tilemap = get_tree().root.get_node("gameScene/Map/TileMap")
 var posInWall = []
 
 func _ready():
