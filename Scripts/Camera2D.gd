@@ -23,13 +23,7 @@ func _process(delta):
 	if trauma:
 		trauma = max(trauma - decay * delta, 0)
 		shake()
-	
-	if player.position.x > 3120:
-		global_position = lerp(global_position,Vector2(3380,0),0.05)
 
-func lockCamera():
-	limit_left = 3200
-	limit_right = 3700
 
 func shake():
 	var amount = pow(trauma, trauma_power)

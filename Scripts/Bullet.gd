@@ -3,7 +3,7 @@ extends Area2D
 var velocity = 12
 var direction
 
-onready var tilemap = get_parent().get_node("Background/TileMap")
+onready var tilemap = get_parent().get_node("Map/TileMap")
 var posInWall = []
 
 func _ready():
@@ -34,6 +34,6 @@ func destroyWall():
 	for n in posInWall.size():
 		pos.append(tilemap.world_to_map(posInWall[n].global_position))
 		pos[n+1] = tilemap.world_to_map(posInWall[n].global_position)
-		pos[n+1] = Vector2(floor(pos[n+1].x/6), floor(pos[n+1].y/6))
+		pos[n+1] = Vector2(floor(pos[n+1].x/2), floor(pos[n+1].y/2))
 		tilemap.set_cellv(pos[n+1], -1)
 	

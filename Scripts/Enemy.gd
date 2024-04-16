@@ -29,7 +29,7 @@ func _physics_process(delta):
 		turnAround()
 	
 	# If enemy sees player, and is not blocked by a wall
-	if(playerDetection.is_colliding() and !playerDetection.get_collider().is_in_group("Map") and !cooldown):
+	if(playerDetection.is_colliding() and playerDetection.get_collider().is_in_group("Players") and !cooldown):
 		handleShooting()
 	
 	#reset x velocity
