@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Sprites/Companions/KiraProfil/Kira Marie Peter-Hansen profil.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/CharacterDescription.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scripts/DramaticEffectButtom1.gd" type="Script" id=4]
 [ext_resource path="res://Sprites/Companions/Cinematic/EUStjerner.png" type="Texture" id=5]
 [ext_resource path="res://Fonts/PoliticianFont.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Fonts/Helvetica.tres" type="DynamicFont" id=7]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 particles_animation = true
@@ -50,7 +51,18 @@ margin_top = 199.0
 margin_right = 911.0
 margin_bottom = 312.0
 custom_fonts/normal_font = ExtResource( 6 )
-text = "Maria Kira Peter-Hansen
+text = "Kira Marie PETER-HANSEN
+"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/ColorRect/Kira"]
+pause_mode = 2
+margin_left = 579.0
+margin_top = 199.0
+margin_right = 911.0
+margin_bottom = 409.0
+custom_fonts/normal_font = ExtResource( 7 )
+text = "
+
 
 Vice-Chair of:
 Subcommittee on Tax Matters"
@@ -73,6 +85,16 @@ margin_right = 988.0
 margin_bottom = 300.0
 custom_fonts/normal_font = ExtResource( 6 )
 text = "Bergur Løkke RASMUSSEN
+"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/ColorRect/Bergur"]
+pause_mode = 2
+margin_left = 579.0
+margin_top = 200.0
+margin_right = 988.0
+margin_bottom = 300.0
+custom_fonts/normal_font = ExtResource( 7 )
+text = "
 
 Member of:
 Committee on Transport and Tourism"
@@ -94,7 +116,16 @@ margin_top = 200.0
 margin_right = 988.0
 margin_bottom = 442.0
 custom_fonts/normal_font = ExtResource( 6 )
-text = "Niels FUGLSANG
+text = "Niels FUGLSANG"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/ColorRect/Niels"]
+pause_mode = 2
+margin_left = 579.0
+margin_top = 200.0
+margin_right = 988.0
+margin_bottom = 442.0
+custom_fonts/normal_font = ExtResource( 7 )
+text = "
 
 Member of:
 Committee on Industry, Research and Energy
