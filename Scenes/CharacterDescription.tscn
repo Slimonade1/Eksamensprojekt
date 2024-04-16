@@ -35,7 +35,6 @@ scale = Vector2( 0.228516, 0.228516 )
 texture = ExtResource( 5 )
 
 [node name="Kira" type="Control" parent="CanvasLayer/ColorRect"]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
