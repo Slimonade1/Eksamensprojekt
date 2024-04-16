@@ -105,21 +105,21 @@ Committee on Industry, Research and Energy
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="DramaticEffectButtom1" type="Sprite" parent="CanvasLayer/Bund"]
+[node name="DramaticEffectButtom1" type="Sprite" parent="CanvasLayer/Bund" groups=["DramaticEffect"]]
 position = Vector2( 415, 592 )
 rotation = -0.0541052
 scale = Vector2( 7, 7 )
 texture = ExtResource( 3 )
 script = ExtResource( 4 )
 
-[node name="DramaticEffectButtom2" type="Sprite" parent="CanvasLayer/Bund"]
+[node name="DramaticEffectButtom2" type="Sprite" parent="CanvasLayer/Bund" groups=["DramaticEffect"]]
 position = Vector2( -472, 639.956 )
 rotation = -0.0541052
 scale = Vector2( 7, 7 )
 texture = ExtResource( 3 )
 script = ExtResource( 4 )
 
-[node name="DramaticEffectButtom3" type="Sprite" parent="CanvasLayer/Bund"]
+[node name="DramaticEffectButtom3" type="Sprite" parent="CanvasLayer/Bund" groups=["DramaticEffect"]]
 position = Vector2( 1309, 544 )
 rotation = -0.0541052
 scale = Vector2( 7, 7 )
@@ -130,21 +130,21 @@ script = ExtResource( 4 )
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="DramaticEffectButtom1" type="Sprite" parent="CanvasLayer/Top"]
+[node name="DramaticEffectButtom1" type="Sprite" parent="CanvasLayer/Top" groups=["DramaticEffect"]]
 position = Vector2( -477, 47 )
 rotation = -3.1957
 scale = Vector2( 7, 7 )
 texture = ExtResource( 3 )
 script = ExtResource( 4 )
 
-[node name="DramaticEffectButtom2" type="Sprite" parent="CanvasLayer/Top"]
+[node name="DramaticEffectButtom2" type="Sprite" parent="CanvasLayer/Top" groups=["DramaticEffect"]]
 position = Vector2( 417, -0.999992 )
 rotation = -3.1957
 scale = Vector2( 7, 7 )
 texture = ExtResource( 3 )
 script = ExtResource( 4 )
 
-[node name="DramaticEffectButtom3" type="Sprite" parent="CanvasLayer/Top"]
+[node name="DramaticEffectButtom3" type="Sprite" parent="CanvasLayer/Top" groups=["DramaticEffect"]]
 position = Vector2( 1311, -49 )
 rotation = -3.1957
 scale = Vector2( 7, 7 )
@@ -157,7 +157,6 @@ wait_time = 3.0
 [node name="MaxTime" type="Timer" parent="."]
 wait_time = 15.0
 
-[connection signal="hide" from="." to="." method="_on_CharacterDescription_hide"]
 [connection signal="visibility_changed" from="CanvasLayer" to="." method="_on_CanvasLayer_visibility_changed"]
 [connection signal="timeout" from="InputCooldown" to="." method="_on_InputCooldown_timeout"]
 [connection signal="timeout" from="MaxTime" to="." method="_on_MaxTime_timeout"]

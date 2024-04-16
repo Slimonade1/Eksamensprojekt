@@ -2,7 +2,6 @@ extends Area2D
 
 var velocity = 12
 var direction
-var bulletSize = 1
 
 onready var tilemap = get_parent().get_node("Background/TileMap")
 var posInWall = []
@@ -13,15 +12,14 @@ func _ready():
 			posInWall.push_back(get_child(n))
 
 func _physics_process(delta):
-	scale.y = bulletSize
 	
 	if direction == "left":
 		position.x -= velocity
-		scale.x = -bulletSize
+		scale.x = -1
 	
 	if direction == "right":
 		position.x += velocity
-		scale.x = bulletSize
+		scale.x = 1
 
 func _on_Bullet_body_entered(body):
 	if body.is_in_group("Enemies") or body.is_in_group("Players"):

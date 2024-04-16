@@ -5,6 +5,16 @@ onready var description = $CanvasLayer
 onready var showing = false
 var showDescription = false
 var politiker
+var startPositions = []
+var dramaticEffects = []
+
+func _ready():
+	for i in get_children():
+		for j in i.get_children():
+			for k in j.get_children():
+				if k.is_in_group("DramaticEffect"):
+					dramaticEffects.push_back(k)
+					startPositions.push_back(k.position)
 
 func _process(delta):
 	if showing:
@@ -32,6 +42,9 @@ func _input(event):
 		self.is_paused = false
 
 func _on_CanvasLayer_visibility_changed():
+	for n in dramaticEffects.size():
+		dramaticEffects[n].position = startPositions[n]
+	
 	showDescription = false
 	
 	$InputCooldown.start()
@@ -39,6 +52,7 @@ func _on_CanvasLayer_visibility_changed():
 	
 	$MaxTime.start()
 	$MaxTime.wait_time = 15
+	
 	
 
 func _on_InputCooldown_timeout():
