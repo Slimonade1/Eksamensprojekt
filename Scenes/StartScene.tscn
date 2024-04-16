@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Fonts/Helvetica.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scripts/StartScene.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/X/362-3625552_cross-red-x-pixel-art.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/TitleScreen/7fe9d6e6af9bd6b2821b024ef5a9078b.png" type="Texture" id=4]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -12,6 +13,7 @@ script = ExtResource( 2 )
 [node name="Start skærm" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+color = Color( 0.0588235, 0.121569, 0.54902, 1 )
 
 [node name="CenterContainer" type="CenterContainer" parent="Start skærm"]
 anchor_left = 0.5
@@ -23,9 +25,13 @@ margin_top = -22.0
 margin_right = 20.0
 margin_bottom = 22.0
 
+[node name="7Fe9D6E6Af9Bd6B2821B024Ef5A9078b" type="Sprite" parent="Start skærm/CenterContainer"]
+position = Vector2( 41, -158 )
+texture = ExtResource( 4 )
+
 [node name="VBoxContainer" type="VBoxContainer" parent="Start skærm/CenterContainer"]
 margin_right = 65.0
-margin_bottom = 44.0
+margin_bottom = 68.0
 
 [node name="start" type="Button" parent="Start skærm/CenterContainer/VBoxContainer"]
 margin_right = 65.0
@@ -38,14 +44,32 @@ margin_right = 65.0
 margin_bottom = 44.0
 text = "Controls"
 
-[node name="controls" type="CanvasLayer" parent="."]
+[node name="quit" type="Button" parent="Start skærm/CenterContainer/VBoxContainer"]
+margin_top = 48.0
+margin_right = 65.0
+margin_bottom = 68.0
+text = "quit"
 
-[node name="ColorRect" type="ColorRect" parent="controls"]
+[node name="controls" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect2" type="ColorRect" parent="controls"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.372549 )
+
+[node name="ColorRect" type="ColorRect" parent="controls/ColorRect2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -181.0
+margin_top = -217.5
+margin_right = 181.0
+margin_bottom = 217.5
 color = Color( 0.27451, 0.160784, 0.160784, 1 )
 
-[node name="Label" type="Label" parent="controls/ColorRect"]
+[node name="Label" type="Label" parent="controls/ColorRect2/ColorRect"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -65,15 +89,15 @@ Shoot = SPACE
 
 Pause = esc"
 
-[node name="TextureButton" type="TextureButton" parent="controls/ColorRect"]
-margin_left = 25.0
-margin_top = 25.0
-margin_right = 655.0
-margin_bottom = 655.0
-rect_scale = Vector2( 0.08, 0.08 )
+[node name="TextureButton" type="TextureButton" parent="controls/ColorRect2/ColorRect"]
+margin_left = 15.0
+margin_top = 15.0
+margin_right = 645.0
+margin_bottom = 645.0
+rect_scale = Vector2( 0.07, 0.07 )
 texture_normal = ExtResource( 3 )
 
-[node name="Volume" type="HSlider" parent="controls/ColorRect"]
+[node name="Volume" type="HSlider" parent="controls/ColorRect2/ColorRect"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -83,7 +107,7 @@ margin_top = 150.0
 margin_right = 167.5
 margin_bottom = 176.0
 
-[node name="Label2" type="Label" parent="controls/ColorRect"]
+[node name="Label2" type="Label" parent="controls/ColorRect2/ColorRect"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -97,4 +121,5 @@ text = "Volume:"
 
 [connection signal="pressed" from="Start skærm/CenterContainer/VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Start skærm/CenterContainer/VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
-[connection signal="pressed" from="controls/ColorRect/TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Start skærm/CenterContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="controls/ColorRect2/ColorRect/TextureButton" to="." method="_on_TextureButton_pressed"]
