@@ -16,7 +16,7 @@ func _ready():
 					dramaticEffects.push_back(k)
 					startPositions.push_back(k.position)
 
-func _process(delta):
+func _process(_delta):
 	if showing:
 		self.is_paused = true
 		set_is_paused(self.is_paused)
