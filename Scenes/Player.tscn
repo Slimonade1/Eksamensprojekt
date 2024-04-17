@@ -244,11 +244,13 @@ animation = "running"
 
 [node name="Bergur" type="AnimatedSprite" parent="playerSprite"]
 visible = false
+position = Vector2( -5, 5 )
 frames = SubResource( 7 )
 animation = "running"
 
 [node name="Kira" type="AnimatedSprite" parent="playerSprite"]
 visible = false
+position = Vector2( -5, 5 )
 frames = SubResource( 8 )
 animation = "jumping"
 

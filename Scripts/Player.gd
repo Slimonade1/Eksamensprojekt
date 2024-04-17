@@ -5,7 +5,7 @@ var damage = 1
 var attackSpeed = 2.0
 var health = 5
 var trauma = 0.0
-var currentPowerUp = ""
+var politiker = ""
 
 # physics
 var speed = 60
@@ -19,9 +19,9 @@ var grounded = false
 # graphics
 var playerDirection = "right"
 onready var sprite = $playerSprite
-onready var spriteFriend = $playerSprite/spriteFriend
 onready var jumpEffect = $"../Jump effect"
 onready var camera = $Camera2D
+var spriteFriend
 
 # gun cooldown
 var cooldown = false
@@ -34,9 +34,6 @@ var counter = 0
 
 func _ready():
 	sprite.playing = true
-	
-	spriteFriend.visible = false
-	spriteFriend.playing = true
 	
 
 func _physics_process(delta):
@@ -110,7 +107,6 @@ func handleMovement(delta):
 	
 	if vel.x == 0:
 		handleAnimation("idle")
-		spriteFriend.animation = "idle"
 	
 	vel = move_and_slide(vel, Vector2.UP)
 	
@@ -119,6 +115,8 @@ func handleMovement(delta):
 		Singletons.gameTime = 0
 
 func handleAnimation(action):
+	if !spriteFriend == null:
+		spriteFriend.animation = "idle"
 	if(action == "idle"):
 		if(health > 3):
 			sprite.animation = "idle"
@@ -128,7 +126,8 @@ func handleAnimation(action):
 			sprite.animation = "idleDMG2"
 		
 	if(action == "running"):
-		spriteFriend.animation = "running"
+		if !spriteFriend == null:
+			spriteFriend.animation = "running"
 		if(health > 3):
 			sprite.animation = "running"
 		elif(health > 1):
@@ -138,7 +137,8 @@ func handleAnimation(action):
 		
 	
 	if(action == "climbing"):
-		spriteFriend.animation = "climbing"
+		if !spriteFriend == null:
+			spriteFriend.animation = "climbing"
 		if(health > 3):
 			sprite.animation = "climbing"
 		elif(health > 1):
@@ -147,7 +147,8 @@ func handleAnimation(action):
 			sprite.animation = "climbingDMG2"
 	
 	if(action == "jumping"):
-		spriteFriend.animation = "jumping"
+		if !spriteFriend == null:
+			spriteFriend.animation = "jumping"
 		if(health > 3):
 			sprite.animation = "jumping"
 		elif(health > 1):
@@ -156,7 +157,19 @@ func handleAnimation(action):
 			sprite.animation = "jumpingDMG2"
 
 func showCompanion():
+	$playerSprite/Niels.hide()
+	$playerSprite/Kira.hide()
+	$playerSprite/Bergur.hide()
+	
+	if politiker == "niels":
+		spriteFriend = $playerSprite/Niels
+	if politiker == "kira":
+		spriteFriend = $playerSprite/Kira
+	if politiker == "bergur":
+		spriteFriend = $playerSprite/Bergur
+	
 	spriteFriend.visible = true
+	spriteFriend.playing = true
 	
 
 func handleShooting():
@@ -204,12 +217,12 @@ func _on_Jump_effect_animation_finished():
 	jumpEffect.visible = false
 
 func handlePowerUps():
-	if currentPowerUp == "bergur":
+	if politiker == "bergur":
 		speed = 100
 	else:
 		speed = 60
 	
-	if currentPowerUp == "niels":
+	if politiker == "niels":
 		attackSpeed = 3.0
 	else:
 		attackSpeed = 2.0
