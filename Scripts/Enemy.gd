@@ -65,7 +65,7 @@ func takeDamage():
 	if health == 0:
 		queue_free()
 	
-	if player.currentPowerUp == "kira":
+	if player.politiker == "kira":
 		if player.health < 5:
 			player.health += 1
 	

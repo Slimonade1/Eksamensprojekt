@@ -186,10 +186,23 @@ script = ExtResource( 1 )
 frames = SubResource( 2 )
 animation = "jumpingDMG2"
 
-[node name="spriteFriend" type="AnimatedSprite" parent="playerSprite"]
+[node name="Niels" type="AnimatedSprite" parent="playerSprite"]
+visible = false
 position = Vector2( -5, 5 )
 frames = SubResource( 4 )
-animation = "climbing"
+animation = "running"
+
+[node name="Kira" type="AnimatedSprite" parent="playerSprite"]
+visible = false
+position = Vector2( -5, 5 )
+frames = SubResource( 4 )
+animation = "running"
+
+[node name="Bergur" type="AnimatedSprite" parent="playerSprite"]
+visible = false
+position = Vector2( -5, 5 )
+frames = SubResource( 4 )
+animation = "running"
 
 [node name="GunPositionL" type="Position2D" parent="playerSprite"]
 position = Vector2( -1, 11 )

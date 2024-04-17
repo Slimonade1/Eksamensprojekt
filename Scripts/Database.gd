@@ -9,6 +9,9 @@ var nonce = null
 var request_queue : Array = []
 var is_requesting : bool = false
 
+onready var textEdit = $CanvasLayer/TextEdit
+onready var timeLabel = $CanvasLayer/Time
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
@@ -17,7 +20,7 @@ func _ready():
 	var secs = fmod(time,60)
 	var mins = fmod(time,60*60) / 60
 	var timeText = "%02d : %02d" % [mins,secs]
-	$Time.text = "Your time: " + String(timeText)
+	timeLabel.text = "Your time: " + String(timeText)
 	
 	var command = "get_times"
 	var data = {"time_ofset" : 0, "time_number" : 10}
@@ -102,20 +105,22 @@ func _http_request_completed(_result, _response_code, _headers, _body):
 		return
 
 	if response['response']['size'] > 0:
-		$TextEdit.set_text("")
+		textEdit.set_text("")
 		for n in (response['response']['size']):
 			var time = int(response['response'][String(n)]['time'])
 			var secs = fmod(time,60)
 			var mins = fmod(time,60*60) / 60
 			var timeText = "%02d : %02d" % [mins,secs]
-			$TextEdit.set_text($TextEdit.get_text() + String(n + 1) + ": " + String(response['response'][String(n)]['player_name']) + "\t\t" + String(timeText) + "\n")
+			textEdit.set_text(textEdit.get_text() + String(n + 1) + ": " + String(response['response'][String(n)]['player_name']) + "\t\t" + String(timeText) + "\n")
 	else:	
-		$TextEdit.set_text("")
+		textEdit.set_text("")
 	
 	
 func _submit_time():
-	var user_name = $PlayerName.get_text()
-	var time = int($Time.get_text())
+	$CanvasLayer/PlayerName.editable = false
+	
+	var user_name = $CanvasLayer/PlayerName.get_text()
+	var time = int(timeLabel.get_text())
 	var command = "add_time"
 	var data = {"username" : user_name, "time" : time}
 	request_queue.push_back({"command" : command, "data" : data})

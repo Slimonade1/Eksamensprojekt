@@ -9,8 +9,8 @@ func _ready():
 
 func _on_Companion_body_entered(body):
 	if body.name == "Player":
+		body.politiker = politiker
 		body.showCompanion()
-		body.currentPowerUp = politiker
 		infoScreen.politiker = politiker
 		infoScreen.showing = true
 		
