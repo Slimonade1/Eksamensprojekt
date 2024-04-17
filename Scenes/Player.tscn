@@ -100,7 +100,7 @@ animations = [ {
 "name": "climbingDMG2",
 "speed": 24.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
