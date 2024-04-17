@@ -2,7 +2,7 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://import/362-3625552_cross-red-x-pixel-art.png-227ab8a2afd4a6a0ecf3a20e20bbb199.stex"
+path="res://.import/362-3625552_cross-red-x-pixel-art.png-227ab8a2afd4a6a0ecf3a20e20bbb199.stex"
 metadata={
 "vram_texture": false
 }
@@ -10,7 +10,7 @@ metadata={
 [deps]
 
 source_file="res://Sprites/X/362-3625552_cross-red-x-pixel-art.png"
-dest_files=[ "res://import/362-3625552_cross-red-x-pixel-art.png-227ab8a2afd4a6a0ecf3a20e20bbb199.stex" ]
+dest_files=[ "res://.import/362-3625552_cross-red-x-pixel-art.png-227ab8a2afd4a6a0ecf3a20e20bbb199.stex" ]
 
 [params]
 

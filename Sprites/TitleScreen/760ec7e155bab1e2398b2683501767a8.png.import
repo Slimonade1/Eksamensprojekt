@@ -2,7 +2,7 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://import/760ec7e155bab1e2398b2683501767a8.png-6d56838743533f3e4176aee9460fcf65.stex"
+path="res://.import/760ec7e155bab1e2398b2683501767a8.png-6d56838743533f3e4176aee9460fcf65.stex"
 metadata={
 "vram_texture": false
 }
@@ -10,7 +10,7 @@ metadata={
 [deps]
 
 source_file="res://Sprites/TitleScreen/760ec7e155bab1e2398b2683501767a8.png"
-dest_files=[ "res://import/760ec7e155bab1e2398b2683501767a8.png-6d56838743533f3e4176aee9460fcf65.stex" ]
+dest_files=[ "res://.import/760ec7e155bab1e2398b2683501767a8.png-6d56838743533f3e4176aee9460fcf65.stex" ]
 
 [params]
 
