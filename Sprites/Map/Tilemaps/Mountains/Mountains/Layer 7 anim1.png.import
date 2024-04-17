@@ -2,7 +2,7 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://import/Layer 7 anim1.png-8940b1962c48d94722a07da63dc46dbd.stex"
+path="res://.import/Layer 7 anim1.png-8940b1962c48d94722a07da63dc46dbd.stex"
 metadata={
 "vram_texture": false
 }
@@ -10,7 +10,7 @@ metadata={
 [deps]
 
 source_file="res://Sprites/Map/Tilemaps/Mountains/Mountains/Layer 7 anim1.png"
-dest_files=[ "res://import/Layer 7 anim1.png-8940b1962c48d94722a07da63dc46dbd.stex" ]
+dest_files=[ "res://.import/Layer 7 anim1.png-8940b1962c48d94722a07da63dc46dbd.stex" ]
 
 [params]
 

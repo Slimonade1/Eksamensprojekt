@@ -169,6 +169,7 @@ func showCompanion():
 		spriteFriend = $playerSprite/Bergur
 	
 	spriteFriend.visible = true
+	spriteFriend.playing = true
 	
 
 func handleShooting():

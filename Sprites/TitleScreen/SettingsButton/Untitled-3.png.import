@@ -2,7 +2,7 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://import/Untitled-3.png-bee10882b402d847ec827165c153dc84.stex"
+path="res://.import/Untitled-3.png-bee10882b402d847ec827165c153dc84.stex"
 metadata={
 "vram_texture": false
 }
@@ -10,7 +10,7 @@ metadata={
 [deps]
 
 source_file="res://Sprites/TitleScreen/SettingsButton/Untitled-3.png"
-dest_files=[ "res://import/Untitled-3.png-bee10882b402d847ec827165c153dc84.stex" ]
+dest_files=[ "res://.import/Untitled-3.png-bee10882b402d847ec827165c153dc84.stex" ]
 
 [params]
 
