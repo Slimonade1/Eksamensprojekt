@@ -5,7 +5,9 @@ onready var infoScreen = $"../../CanvasLayer2/CharacterDescription"
 export var politiker = ""
 
 func _ready():
+	sprite.animation = politiker
 	sprite.playing = true
+	
 
 func _on_Companion_body_entered(body):
 	if body.name == "Player":

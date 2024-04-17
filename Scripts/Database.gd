@@ -118,6 +118,7 @@ func _http_request_completed(_result, _response_code, _headers, _body):
 	
 func _submit_time():
 	$CanvasLayer/PlayerName.editable = false
+	$CanvasLayer/AddTime.disabled = true
 	
 	var user_name = $CanvasLayer/PlayerName.get_text()
 	var time = int(timeLabel.get_text())

@@ -11,7 +11,7 @@ func _ready():
 		if get_child(n).is_in_group("PositionInWalls"):
 			posInWall.push_back(get_child(n))
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	
 	if direction == "left":
 		position.x -= velocity

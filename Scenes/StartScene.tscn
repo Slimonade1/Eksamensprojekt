@@ -105,15 +105,15 @@ margin_top = -97.5
 margin_right = 64.5
 margin_bottom = 97.5
 custom_fonts/font = ExtResource( 1 )
-text = "Right = D
+text = "Jump = W
 
 Left = A
 
-Jump = W
+Right = D
 
 Shoot = SPACE
 
-Pause = esc"
+Pause = ESC"
 
 [node name="TextureButton" type="TextureButton" parent="controls/ColorRect2/ColorRect"]
 margin_left = 15.0
