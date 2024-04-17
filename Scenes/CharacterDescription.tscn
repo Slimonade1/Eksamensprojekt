@@ -64,7 +64,9 @@ text = "
 
 
 Vice-Chair of:
-Subcommittee on Tax Matters"
+Subcommittee on Tax Matters
+
+Collect 50% of enemy HP på damaging them"
 
 [node name="Bergur" type="Control" parent="CanvasLayer/ColorRect"]
 visible = false
@@ -96,7 +98,9 @@ custom_fonts/normal_font = ExtResource( 7 )
 text = "
 
 Member of:
-Committee on Transport and Tourism"
+Committee on Transport and Tourism
+
+You get 60% more speed for travel us only."
 
 [node name="Niels" type="Control" parent="CanvasLayer/ColorRect"]
 visible = false
@@ -128,6 +132,8 @@ text = "
 
 Member of:
 Committee on Industry, Research and Energy
+
+Your weapon now have more energy and shoot 100% faster.
 
 "
 
