@@ -17,7 +17,7 @@ margin_left = 125.0
 margin_top = 180.0
 margin_right = 274.0
 margin_bottom = 250.0
-max_length = 40
+max_length = 20
 
 [node name="Time" type="Label" parent="."]
 margin_left = 229.0

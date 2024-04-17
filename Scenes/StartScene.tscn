@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Fonts/Helvetica.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scripts/StartScene.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/X/362-3625552_cross-red-x-pixel-art.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/TitleScreen/7fe9d6e6af9bd6b2821b024ef5a9078b.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/TitleScreen/StartButton/Untitled-1.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/TitleScreen/StartButton/Untitled-2.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/TitleScreen/QuitButton/Untitled-2.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/TitleScreen/QuitButton/Untitled-1.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/TitleScreen/SettingsButton/Untitled-1.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/TitleScreen/SettingsButton/Untitled-3.png" type="Texture" id=10]
 
 [node name="StartScene" type="Control"]
 anchor_right = 1.0
@@ -20,35 +26,61 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -20.0
-margin_top = -22.0
-margin_right = 20.0
-margin_bottom = 22.0
+margin_left = -123.0
+margin_top = -63.5
+margin_right = 123.0
+margin_bottom = 133.5
 
 [node name="7Fe9D6E6Af9Bd6B2821B024Ef5A9078b" type="Sprite" parent="Start skærm/CenterContainer"]
-position = Vector2( 41, -158 )
+position = Vector2( 123, -137 )
 texture = ExtResource( 4 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Start skærm/CenterContainer"]
-margin_right = 65.0
-margin_bottom = 68.0
+margin_left = 123.0
+margin_top = 98.0
+margin_right = 123.0
+margin_bottom = 98.0
 
-[node name="start" type="Button" parent="Start skærm/CenterContainer/VBoxContainer"]
-margin_right = 65.0
-margin_bottom = 20.0
-text = "Play"
+[node name="Start" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -70.0
+margin_top = -63.5
+margin_right = 280.0
+margin_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( 0.4, 0.4 )
+texture_normal = ExtResource( 6 )
+texture_hover = ExtResource( 5 )
 
-[node name="Settings" type="Button" parent="Start skærm/CenterContainer/VBoxContainer"]
-margin_top = 24.0
-margin_right = 65.0
-margin_bottom = 44.0
-text = "Controls"
+[node name="Setting" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -110.0
+margin_top = -11.0
+margin_right = 442.0
+margin_bottom = 163.0
+rect_scale = Vector2( 0.4, 0.4 )
+texture_normal = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
 
-[node name="quit" type="Button" parent="Start skærm/CenterContainer/VBoxContainer"]
-margin_top = 48.0
-margin_right = 65.0
-margin_bottom = 68.0
-text = "quit"
+[node name="Quit" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -70.0
+margin_top = 48.5
+margin_right = 280.0
+margin_bottom = 221.5
+rect_scale = Vector2( 0.4, 0.4 )
+texture_normal = ExtResource( 7 )
+texture_hover = ExtResource( 8 )
 
 [node name="controls" type="CanvasLayer" parent="."]
 visible = false
@@ -119,7 +151,7 @@ margin_bottom = 154.0
 custom_fonts/font = ExtResource( 1 )
 text = "Volume:"
 
-[connection signal="pressed" from="Start skærm/CenterContainer/VBoxContainer/start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Start skærm/CenterContainer/VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
-[connection signal="pressed" from="Start skærm/CenterContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="Setting" to="." method="_on_Setting_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="controls/ColorRect2/ColorRect/TextureButton" to="." method="_on_TextureButton_pressed"]
