@@ -16,10 +16,11 @@ onready var timeLabel = $CanvasLayer/Time
 func _ready():
 	randomize()
 	
-	var time = int(Singletons.gameTime)
-	var secs = fmod(time,60)
-	var mins = fmod(time,60*60) / 60
-	var timeText = "%02d : %02d" % [mins,secs]
+	var time = Singletons.gameTime
+	var mili = fmod(time, 1)*1000
+	var secs = fmod(time, 60)
+	var mins = fmod(time, 60*60) / 60
+	var timeText = "%02d : %02d : %02d" % [mins,secs,mili]
 	timeLabel.text = "Your time: " + String(timeText)
 	
 	var command = "get_times"
@@ -107,10 +108,11 @@ func _http_request_completed(_result, _response_code, _headers, _body):
 	if response['response']['size'] > 0:
 		textEdit.set_text("")
 		for n in (response['response']['size']):
-			var time = int(response['response'][String(n)]['time'])
-			var secs = fmod(time,60)
-			var mins = fmod(time,60*60) / 60
-			var timeText = "%02d : %02d" % [mins,secs]
+			var time = float(response['response'][String(n)]['time'])/1000
+			var mili = fmod(time, 1)*1000
+			var secs = fmod(time, 60)
+			var mins = fmod(time, 60*60) / 60
+			var timeText = "%02d : %02d : %02d" % [mins,secs,mili]
 			textEdit.set_text(textEdit.get_text() + String(n + 1) + ": " + String(response['response'][String(n)]['player_name']) + "\t\t" + String(timeText) + "\n")
 	else:	
 		textEdit.set_text("")
