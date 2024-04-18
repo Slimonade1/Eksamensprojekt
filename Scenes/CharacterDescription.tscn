@@ -67,12 +67,8 @@ text = "
 Vice-Chair of:
 Subcommittee on Tax Matters
 
-<<<<<<< Updated upstream
-Collect 50% of enemy HP på damaging them"
-=======
 Power up: Life steal
 Strike your enemies with taxes, gain lost health when damaging enemies"
->>>>>>> Stashed changes
 
 [node name="Bergur" type="Control" parent="CanvasLayer/ColorRect"]
 visible = false
@@ -106,12 +102,8 @@ text = "
 Member of:
 Committee on Transport and Tourism
 
-<<<<<<< Updated upstream
-You get 60% more speed for travel us only."
-=======
 Power up: Increased movement speed
 With the power of transportation, plow through the levels at insane speeds"
->>>>>>> Stashed changes
 
 [node name="Niels" type="Control" parent="CanvasLayer/ColorRect"]
 visible = false
@@ -144,12 +136,8 @@ text = "
 Member of:
 Committee on Industry, Research and Energy
 
-<<<<<<< Updated upstream
-Your weapon now have more energy and shoot 100% faster.
-=======
 Power up: Shorter bullet cooldown
 Unleash the hells of increased energy research upon your enemies
->>>>>>> Stashed changes
 
 "
 
