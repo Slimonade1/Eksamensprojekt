@@ -551,7 +551,7 @@ scroll_base_scale = Vector2( 0.05, 0.005 )
 motion_scale = Vector2( 1.5, 1 )
 
 [node name="Background" type="Sprite" parent="Map/ParallaxBackground/SimpleBackground"]
-position = Vector2( 3329.62, -642 )
+position = Vector2( 3309, -629 )
 scale = Vector2( 7.85974, 4.98291 )
 z_index = -100
 texture = ExtResource( 6 )

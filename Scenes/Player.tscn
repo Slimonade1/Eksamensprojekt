@@ -189,7 +189,7 @@ animations = [ {
 "frames": [ ExtResource( 79 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 80 ), ExtResource( 80 ), ExtResource( 79 ), ExtResource( 79 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 80 ), ExtResource( 79 ), ExtResource( 79 ) ],
 "loop": true,
 "name": "running",
-"speed": 5.0
+"speed": 24.0
 } ]
 
 [sub_resource type="SpriteFrames" id=8]
@@ -212,7 +212,7 @@ animations = [ {
 "frames": [ ExtResource( 81 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 82 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 81 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 82 ), ExtResource( 81 ), ExtResource( 81 ) ],
 "loop": true,
 "name": "running",
-"speed": 5.0
+"speed": 24.0
 } ]
 
 [sub_resource type="SpriteFrames" id=6]
@@ -234,7 +234,7 @@ script = ExtResource( 1 )
 
 [node name="playerSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-animation = "jumpingDMG2"
+animation = "idle"
 
 [node name="Niels" type="AnimatedSprite" parent="playerSprite"]
 visible = false

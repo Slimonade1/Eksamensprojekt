@@ -38,6 +38,9 @@ func _ready():
 
 func _physics_process(delta):
 	handleMovement(delta)
+	if spriteFriend != null:
+		print(spriteFriend.frame)
+		print(spriteFriend.playing)
 	
 	if Input.is_action_pressed("ui_shoot") and !cooldown:
 		handleShooting()

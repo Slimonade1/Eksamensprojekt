@@ -35,6 +35,7 @@ scale = Vector2( 0.228516, 0.228516 )
 texture = ExtResource( 5 )
 
 [node name="Kira" type="Control" parent="CanvasLayer/ColorRect"]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -66,7 +67,12 @@ text = "
 Vice-Chair of:
 Subcommittee on Tax Matters
 
+<<<<<<< Updated upstream
 Collect 50% of enemy HP på damaging them"
+=======
+Power up: Life steal
+Strike your enemies with taxes, gain lost health when damaging enemies"
+>>>>>>> Stashed changes
 
 [node name="Bergur" type="Control" parent="CanvasLayer/ColorRect"]
 visible = false
@@ -93,14 +99,19 @@ pause_mode = 2
 margin_left = 579.0
 margin_top = 200.0
 margin_right = 988.0
-margin_bottom = 300.0
+margin_bottom = 369.0
 custom_fonts/normal_font = ExtResource( 7 )
 text = "
 
 Member of:
 Committee on Transport and Tourism
 
+<<<<<<< Updated upstream
 You get 60% more speed for travel us only."
+=======
+Power up: Increased movement speed
+With the power of transportation, plow through the levels at insane speeds"
+>>>>>>> Stashed changes
 
 [node name="Niels" type="Control" parent="CanvasLayer/ColorRect"]
 visible = false
@@ -133,7 +144,12 @@ text = "
 Member of:
 Committee on Industry, Research and Energy
 
+<<<<<<< Updated upstream
 Your weapon now have more energy and shoot 100% faster.
+=======
+Power up: Shorter bullet cooldown
+Unleash the hells of increased energy research upon your enemies
+>>>>>>> Stashed changes
 
 "
 
