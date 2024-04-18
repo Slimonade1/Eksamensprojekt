@@ -1,7 +1,12 @@
 extends Control
 
+onready var volumeControl = $controls/ColorRect2/ColorRect/Volume
+
 func _ready():
 	$controls.visible = false
+
+func _process(delta):
+	Singletons.volume = volumeControl.value
 
 func _on_Start_pressed():
 	get_tree().change_scene("res://Scenes/gameScene.tscn")

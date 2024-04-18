@@ -132,6 +132,9 @@ margin_left = -167.5
 margin_top = 150.0
 margin_right = 167.5
 margin_bottom = 176.0
+min_value = -40.0
+max_value = 0.0
+value = -20.0
 
 [node name="Label2" type="Label" parent="controls/ColorRect2/ColorRect"]
 anchor_left = 0.5

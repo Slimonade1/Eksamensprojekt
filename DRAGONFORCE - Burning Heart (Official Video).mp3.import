@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://import/DRAGONFORCE - Burning Heart (Official Video).mp3-361e703bce7d6896e4682924c92306ac.mp3str"
+
+[deps]
+
+source_file="res://DRAGONFORCE - Burning Heart (Official Video).mp3"
+dest_files=[ "res://import/DRAGONFORCE - Burning Heart (Official Video).mp3-361e703bce7d6896e4682924c92306ac.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Map/Tilemaps/Mountains/tileset.png" type="Texture" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://Scripts/gameScene.gd" type="Script" id=21]
 [ext_resource path="res://Sprites/Map/Tilemaps/Mountains/Mountains/Layer 1 anim1.png" type="Texture" id=22]
 [ext_resource path="res://Sprites/Map/Tilemaps/Mountains/Mountains/Layer 3 anim1.png" type="Texture" id=23]
+[ext_resource path="res://DRAGONFORCE - Burning Heart (Official Video).mp3" type="AudioStream" id=24]
 
 [sub_resource type="TileSet" id=63]
 0/name = "Layer 1 anim1.png 0"
@@ -694,5 +695,9 @@ script = ExtResource( 19 )
 [node name="WinArea" parent="." instance=ExtResource( 20 )]
 position = Vector2( 6091, -784 )
 scale = Vector2( 3, 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 24 )
+autoplay = true
 
 [connection signal="animation_finished" from="Jump effect" to="Player" method="_on_Jump_effect_animation_finished"]
