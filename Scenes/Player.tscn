@@ -246,7 +246,7 @@ animation = "running"
 visible = false
 position = Vector2( -5, 5 )
 frames = SubResource( 7 )
-animation = "running"
+animation = "idle"
 
 [node name="Kira" type="AnimatedSprite" parent="playerSprite"]
 visible = false

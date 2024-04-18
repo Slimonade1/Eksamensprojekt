@@ -38,9 +38,6 @@ func _ready():
 
 func _physics_process(delta):
 	handleMovement(delta)
-	if spriteFriend != null:
-		print(spriteFriend.frame)
-		print(spriteFriend.playing)
 	
 	if Input.is_action_pressed("ui_shoot") and !cooldown:
 		handleShooting()
@@ -79,7 +76,7 @@ func handleMovement(delta):
 	if Input.is_action_pressed("ui_up") and is_on_floor():
 		vel.y -= jumpForce
 		jumpEffect.position.x = position.x - 8
-		jumpEffect.position.y = position.y+ 30
+		jumpEffect.position.y = position.y + 30
 		jumpEffect.playing = true
 		jumpEffect.visible = true
 		trauma = -1.3

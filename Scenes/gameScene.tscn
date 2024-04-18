@@ -697,6 +697,7 @@ position = Vector2( 6091, -784 )
 scale = Vector2( 3, 3 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
 stream = ExtResource( 24 )
 autoplay = true
 
