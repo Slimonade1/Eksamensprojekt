@@ -73,4 +73,13 @@ The Politicians!"
 align = 1
 valign = 1
 
+[node name="Label2" type="Label" parent="CanvasLayer"]
+margin_left = 356.0
+margin_top = 198.0
+margin_right = 490.0
+margin_bottom = 217.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = ExtResource( 3 )
+text = "Your name here:"
+
 [connection signal="pressed" from="CanvasLayer/AddTime" to="." method="_submit_time"]

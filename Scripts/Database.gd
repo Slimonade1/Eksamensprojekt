@@ -119,18 +119,21 @@ func _http_request_completed(_result, _response_code, _headers, _body):
 	
 	
 func _submit_time():
-	$CanvasLayer/PlayerName.editable = false
-	$CanvasLayer/AddTime.disabled = true
-	
-	var user_name = $CanvasLayer/PlayerName.get_text()
-	var time = int(timeLabel.get_text())
-	var command = "add_time"
-	var data = {"username" : user_name, "time" : time}
-	request_queue.push_back({"command" : command, "data" : data})
-	
-	command = "get_times"
-	data = {"time_ofset" : 0, "time_number" : 10}
-	request_queue.push_back({"command" : command, "data" : data})
+	if $CanvasLayer/PlayerName.text == "":
+		return
+	else:
+		$CanvasLayer/PlayerName.editable = false
+		$CanvasLayer/AddTime.disabled = true
+		
+		var user_name = $CanvasLayer/PlayerName.get_text()
+		var time = int(timeLabel.get_text())
+		var command = "add_time"
+		var data = {"username" : user_name, "time" : time}
+		request_queue.push_back({"command" : command, "data" : data})
+		
+		command = "get_times"
+		data = {"time_ofset" : 0, "time_number" : 10}
+		request_queue.push_back({"command" : command, "data" : data})
 	
 
 

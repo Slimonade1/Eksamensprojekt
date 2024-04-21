@@ -2,7 +2,6 @@ extends KinematicBody2D
 
 #stats
 export var speed = 200
-var jumpForce = 800
 var gravity = 2000
 var health = 3
 
