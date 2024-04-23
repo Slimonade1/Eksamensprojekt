@@ -54,9 +54,14 @@ func _physics_process(delta):
 		playerDetection.scale.x = 1
 
 func turnAround():
+	# Sæt turn til true
 	turn = true
+	
+	# Hvis turn er sand kør kode
 	if turn:
+		# Ændre hvilken retning fjenden går i
 		speed *= -1
+		# Sørg for at fjenden kun vender sig en gang
 		turn = false
 
 func takeDamage():
