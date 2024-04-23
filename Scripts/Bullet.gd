@@ -41,7 +41,11 @@ func destroyWall():
 	for n in posInWall.size():
 		# Tilføj positionen af PositionInWalls
 		pos.append(tilemap.world_to_map(posInWall[n].global_position))
-		#pos[n+1] = tilemap.world_to_map(posInWall[n].global_position)
+		
+		# Skift værdien i pos fra en global position til tilemap position
+		# Rund op til nærmeste position og gang med to grundet map har scale*2
 		pos[n+1] = Vector2(floor(pos[n+1].x/2), floor(pos[n+1].y/2))
+		
+		# Fjern celle i tilemap på positionen
 		tilemap.set_cellv(pos[n+1], -1)
 	
